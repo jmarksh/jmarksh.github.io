@@ -1,38 +1,162 @@
----
-layout: default
-title: Home
----
+<html>
+	<head>
+		<title>Discover Abroad | University of Georgia</title>
+		<link rel="stylesheet" type="text/css" href="skeleton.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	</head>
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}/{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+	<body>
+		<div class="wrapper">
+			<header>
+				<div class="logo">
+					<a href="index.html"><img src="logo-discoverabroad.jpg" /></a>
+				</div>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+				<div class="site-nav">
+					<a href="index.html">Home</a>
+					<div class="dropdown big-only">
+						<button>Programs <i class="fas fa-angle-down"></i></button>
+						<div class="dropdown-content">
+							<a href="#">Spring Australia, New Zealand, Fiji, Hawaii</a>
+							<a href="#">Spring Break Hawaii</a>
+							<a href="maymester.html">Maymester Australia and New Zealand</a>
+							<a href="fiji.html">Add-on Fiji</a>
+							<a href="#">Summer Australia: Global Health</a>
+							<a href="#">Summer England and Scotland</a>
+							<a href="#">Summer Great Smoky Mountains National Park</a>
+							<a href="#">Winter Break Australia</a>
+						</div>
+					</div>
+					<div class="dropdown big-only">
+						<button>About <i class="fas fa-angle-down"></i></button>
+						<div class="dropdown-content">
+							<a href="#">Mission</a>
+							<a href="#">Partners</a>
+							<a href="#">Research</a>
+							<a href="#">Testimonials</a>
+						</div>
+					</div>
+					<a href="#">Contact Us</a>
+					<a href="#" class="small-only"><i class="fas fa-angle-down"></i> Scroll for programs <i class="fas fa-angle-down"></i></a>
+				</div>
+			</header>
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+			<div class="commits">
+				<div>
+					<span id="commit-to">Commit to</span><br />
+					<span id="commit-action">Experience.</span>
+				</div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+				<div class="big-only">
+					<span id="commit-to">Commit to</span><br />
+					<span id="commit-action">Sustainability.</span>
+				</div>
 
+				<div class="desktop-only">
+					<span id="commit-to">Commit to</span><br />
+					<span id="commit-action">Each Other.</span>
+				</div>
+			</div>
+
+			<div class="banner">
+				<img src="banner01.jpg" />
+			</div>
+
+			<div class="mission">
+				<p>Providing over 300 students per year with a <a href="https://www.iie.org/Research-and-Insights/Best-Practices-Resource/Award-Winners/Study-Abroad/University-of-Georgia-2012">national award-winning</a> international education.<span class="big-only"> Emphasizing the importance of conservation and inter-generational equity.</span><span class="desktop-only"> Developing global citizens that care for their neighbors at home and abroad.</span></p>
+			</div>
+
+			<main>
+				<section>
+					<div class="products">
+						<div class="product">
+							<img src="banner02.jpg" />
+							<div class="product-description">
+								<h4>Spring Semester Australia, New Zealand, Fiji, and Hawaii</h4>
+								<p>January 22 - April 1, 2019<br />$6,995*</p>
+							</div>
+							<a class="button button-primary">More Info</a>
+						</div>
+						<div class="product">
+							<img src="banner02.jpg" />
+							<div class="product-description">
+								<h4>Spring Break Hawaii</h4>
+								<p>Date - Date<br />$1,195*</p>
+							</div>
+							<a class="button button-primary">More Info</a>
+						</div>
+						<div class="product">
+							<img src="banner02.jpg" />
+							<div class="product-description">
+								<h4>Maymester Australia and New Zealand</h4>
+								<p>May 9 - June 3, 2019<br />$2,995*</p>
+							</div>
+							<a class="button button-primary" href="maymester.html">More Info</a>
+						</div>
+						<div class="product">
+							<img src="banner04.jpg" />
+							<div class="product-description">
+								<h4>Fiji: Ecotourism and Sustainability</h4>
+								<p>June 3 - 10, 2019<br />$895*</p>
+							</div>
+							<a class="button button-primary" href="fiji.html">More Info</a>
+						</div>
+						<div class="product">
+							<img src="banner02.jpg" />
+							<div class="product-description">
+								<h4>Summer Australia</h4>
+								<p>Date - Date<br />$2,995*</p>
+							</div>
+							<a class="button button-primary">More Info</a>
+						</div>
+						<div class="product">
+							<img src="banner02.jpg" />
+							<div class="product-description">
+								<h4>Summer England and Scotland</h4>
+								<p>Date - Date<br />$2,995*</p>
+							</div>
+							<a class="button button-primary">More Info</a>
+						</div>
+						<div class="product">
+							<img src="banner02.jpg" />
+							<div class="product-description">
+								<h4>Summer Great Smoky Mountains National Park</h4>
+								<p>Date - Date<br />$565*</p>
+							</div>
+							<a class="button button-primary">More Info</a>
+						</div>
+						<div class="product">
+							<img src="banner00.jpg" />
+							<div class="product-description">
+								<h4>Winter Break Australia</h4>
+								<p>Date - Date<br />$2,995*</p>
+							</div>
+							<a class="button button-primary">More Info</a>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<aside class="extra">
+				<p>*Program fees exclude tuition and UGA fees, airfare (optional group flight usually available), course materials, and personal spending. Most meals included, though this varies by program.</p>
+			</aside>
+
+			<footer>
+				<div class="testimonial big-only">
+					<blockquote>
+						<p>"I learned more than I ever imagined I could while experiencing the most beautiful, stunning parts of the world. This program really opened my eyes on issues I had never considered before, and I am coming home with a more open mind and broader world view."</p>
+						<p>&mdash; Emily Gronlund, Maymester Australia and New Zealand 2017</p>
+					</blockquote>
+					<button class="button-primary">Read More Testimonials</button>
+				</div>
+				<div class="information">
+					<p>Room 102, Building 4<br />180 E Green St.<br />Warnell School of Forestry and Natural Resources<br />University of Georgia<br />Athens, GA 30602</p>
+					<p>E: discoverabroad@uga.edu<br />T: (706) 542-9713</p>
+					<p><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i></p>
+				</div>
+				<div class="copyright"><i class="far fa-copyright"></i> 2018 Discover Abroad &amp; the University of Georgia</div>
+			</footer>
+		</div>
+	</body>
+</html>

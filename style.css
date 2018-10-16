@@ -1,0 +1,376 @@
+/* Table of Contents
+----------------------------
+- Default layout rows
+-- Header
+--- Logo
+--- Site-nav
+---- Dropdown functionality
+-- Banner
+-- Highlights
+--- Commit-Tos (homepage UGA branding element)
+-- Main
+--- Products (homepage programs list)
+-- Extra (for *footnotes from main, gallery on programs)
+-- Footer
+- Screen-size restricted displays
+*/
+
+/*--------------------------------------------------
+- Default layout of rows
+--------------------------------------------------*/
+
+.wrapper {
+	display: grid;
+	grid-auto-rows: auto;
+}
+
+/*--------------------------------------------------
+-- Header
+--------------------------------------------------*/
+
+header {
+	padding: 3rem 7%;
+	display: grid;
+	grid-gap: 3rem;
+	grid-template:
+		"logo nav" auto
+		/ 1fr 3fr;
+}
+@media (max-width: 680px) {
+	header {
+		grid-gap: 2rem;
+		grid-template:
+			"logo" auto
+			"nav" auto
+				/ 1fr;
+	}
+}
+
+.logo {
+	grid-area: logo;
+	text-align: center;
+}
+
+.logo img {
+	max-width: 100%;
+	max-height: auto;
+}
+
+.site-nav {
+	grid-area: nav;
+	text-align: center;
+	justify-self: center;
+	align-self: center;
+	overflow: hidden;
+}
+@media (max-width: 680px) {
+	.site-nav {
+		display: grid;
+		grid-auto-rows;
+	}
+}
+
+.site-nav a {
+	float: left;
+	color: #666666;
+	text-align: center;
+	line-height: 2.5rem;
+	padding: 0 2rem;
+	text-decoration: none;
+	transition-duration: 0.15s;
+}
+.site-nav a:hover {
+	color: #BA0C2F;
+}
+@media (max-width: 680px) {
+	.site-nav a {
+		float: none;
+		padding: 0;
+	}
+}
+
+/* -------------------- Nav dropdown -------------------- */
+
+.site-nav .dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.site-nav button {
+	border: none;
+	border-radius: 0;
+	color: #666666;
+	letter-spacing: 0;
+	height: 2.5rem;
+	padding: 0 1.5rem;
+	outline: none;
+	transition-duration: 0.15s;
+}
+
+.site-nav button:hover {
+	background-color: #ffffff;
+	color: #BA0C2F;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #ffffff;
+	min-width: 160px;
+	border: 1px solid #bbbbbb;
+	box-shadow: 0 1px 1px 1px rgba(153,153,153,.5);
+	box-sizing: border-box;
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/*--------------------------------------------------
+-- Banner
+--------------------------------------------------*/
+
+.banner {
+	height: 450px;
+}
+
+.banner img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/*--------------------------------------------------
+-- Highlights
+--------------------------------------------------*/
+
+/* -------------------- Commit-Tos -------------------- */
+
+.commits {
+	padding: 3rem;
+	background-color: #BA0C2F;
+	font-weight: bold;
+	color: #ffffff;
+	letter-spacing: .3rem;
+	text-transform: uppercase;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 3rem;
+	justify-items: center;
+}
+@media (max-width: 1000px) {
+	.commits {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 680px) {
+	.commits {
+		grid-template-columns: 1fr;
+	}
+}
+
+#commit-to {
+	font-family: "Merriweather", serif;
+	font-size: 1.6rem;
+	line-height: 2rem;
+}
+
+#commit-action {
+	font-family: Trade Gothic, Oswald, sans-serif;
+	font-size: 3.5rem;
+	line-height: 3.5rem;
+	white-space: nowrap;
+}
+
+/* -------------------- Mission -------------------- */
+
+.mission {
+	padding: 3rem 7%;
+	background-color: #D6D2C4;
+	text-align: center;
+	display: grid;
+	grid-gap: 3rem;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.mission p {
+	margin: 0;
+}
+
+/* -------------------- Program Title -------------------- */
+
+.program-title {
+	text-align: center;
+	background-color: #BA0C2F;
+}
+
+.program-title h1 {
+	color: #ffffff;
+	font-weight: bold;
+	margin: 3rem;
+}
+
+/* -------------------- Program Details and Apply Button (come together) -------------------- */
+
+.program-details {
+	padding: 3rem 7%;
+	background-color: #D6D2C4;
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.program-details p {
+	margin: 0;
+}
+
+.apply {
+	padding: 3rem 7% 1.5rem 7%;
+	text-align: center;
+	display: grid;
+}
+
+/* --------------------------------------------------
+-- Main
+--------------------------------------------------*/
+
+main {
+	padding: 2rem 7%;
+	display: grid;
+	grid-gap: 3rem;
+	grid-auto-rows: auto;
+}
+@media (max-width: 680px) {
+	main {
+		grid-gap: 2rem;
+	}
+}
+
+.divider {
+	padding: 3rem 0;
+	border-top: 1px solid #BA0C2F;
+}
+
+/* -------------------- Products -------------------- */
+
+.products {
+	padding-top: 3rem;
+	text-align: center;
+	display: grid;
+	grid-gap: 3rem;
+	align-items: start;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr) );
+}
+@media (max-width: 680px) {
+	.products {
+		grid-gap: 3rem;
+	}
+}
+
+.product {
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	box-shadow: 0 0 1px 0 #999999;
+}
+
+.product img {
+	width: 100%;
+}
+
+.product-description {
+	padding: 1rem 1rem 0 1rem;
+}
+
+.product .button {
+	margin: 1.5rem;
+}
+
+/*--------------------------------------------------
+-- Extra
+--------------------------------------------------*/
+
+.extra {
+	text-align: center;
+	padding: 3rem 7%;
+	background-color: #004E60;
+	color: #ffffff;
+}
+
+/*--------------------------------------------------
+-- Footer
+--------------------------------------------------*/
+
+footer {
+	padding: 3rem 7%;
+	background-color: #000000;
+	color: #ffffff;
+	display: grid;
+	grid-gap: 3rem;
+	grid-template:
+		". information" auto
+		". information" auto
+			/ 3fr 2fr;
+}
+@media (max-width: 680px) {
+	footer {
+		text-align: center;
+		grid-gap: 2rem;
+		grid-template:
+			"information" auto
+			"." auto
+				/ 1fr;
+	}
+}
+
+footer .testimonial blockquote {
+	font-style: italic;
+	margin: 0;
+}
+
+footer .information {
+	grid-area: information;
+}
+
+footer .information i {
+	font-size: 3rem;
+	letter-spacing: 1rem;
+}
+
+/*----------------------------------------
+Screen-size restricted displays
+----------------------------------------*/
+
+/* To display things only in mobile */
+@media (min-width: 400px) {
+	.mobile-only {
+		display: none;
+	}
+}
+
+/* TO display things only in smaller screens like mobile or phablet */
+@media (min-width: 680px) {
+	.small-only {
+		display: none;
+	}
+}
+
+/* To display things only in desktop */
+@media (max-width: 1000px) {
+	.desktop-only {
+		display: none;
+	}
+}
+
+/* To display things only in bigger screens like desktop or tablet */
+@media (max-width: 680px) {
+	.big-only {
+		display: none;
+	}
+}
