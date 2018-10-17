@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700|Merriweather+Sans:400,400i,700,700i|Merriweather:400,400i,700,700i');
+
+
 /* Table of Contents
 ----------------------------
 - Default layout rows
@@ -34,9 +37,9 @@ header {
 	grid-gap: 3rem;
 	grid-template:
 		"logo nav" auto
-		/ 1fr 3fr;
+		/ 1fr 2fr;
 }
-@media (max-width: 680px) {
+@media (max-width: 800px) {
 	header {
 		grid-gap: 2rem;
 		grid-template:
@@ -56,7 +59,7 @@ header {
 	max-height: auto;
 }
 
-.site-nav {
+nav {
 	grid-area: nav;
 	text-align: center;
 	justify-self: center;
@@ -64,13 +67,14 @@ header {
 	overflow: hidden;
 }
 @media (max-width: 680px) {
-	.site-nav {
+	nav {
 		display: grid;
-		grid-auto-rows;
+		grid-gap: .5rem;
+		grid-auto-rows: auto;
 	}
 }
 
-.site-nav a {
+nav a {
 	float: left;
 	color: #666666;
 	text-align: center;
@@ -79,11 +83,11 @@ header {
 	text-decoration: none;
 	transition-duration: 0.15s;
 }
-.site-nav a:hover {
+nav a:hover {
 	color: #BA0C2F;
 }
 @media (max-width: 680px) {
-	.site-nav a {
+	nav a {
 		float: none;
 		padding: 0;
 	}
@@ -91,12 +95,12 @@ header {
 
 /* -------------------- Nav dropdown -------------------- */
 
-.site-nav .dropdown {
+nav .dropdown {
 	float: left;
 	overflow: hidden;
 }
 
-.site-nav button {
+nav button {
 	border: none;
 	border-radius: 0;
 	color: #666666;
@@ -107,7 +111,7 @@ header {
 	transition-duration: 0.15s;
 }
 
-.site-nav button:hover {
+nav button:hover {
 	background-color: #ffffff;
 	color: #BA0C2F;
 }
@@ -140,12 +144,128 @@ header {
 .banner {
 	height: 450px;
 }
+@media (max-width: 680px) {
+	.banner {
+		height: 300px;
+	}
+}
 
 .banner img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 450px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+@media (max-width: 680px) {
+	ul.slides {
+		height: 300px;
+	}
+}
+
+ul.slides input {
+    display: none;
+}
+
+.slide-container {
+    display: block;
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition-duration: .25s;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 10rem;
+    line-height: 30rem;
+    color: #ffffff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 2rem;
+    opacity: 0;
+    transition: opacity .1s;
+    cursor: pointer;
+}
+@media (max-width: 680px) {
+	.carousel-controls label {
+		opacity: 1;
+	}
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2rem;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0.5;
+    margin: 1rem;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block;
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3,
+input#img-4:checked ~ .carousel-dots label#img-dot-4,
+input#img-5:checked ~ .carousel-dots label#img-dot-5,
+input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+	opacity: 1;
+}
+
 
 /*--------------------------------------------------
 -- Highlights
@@ -213,6 +333,7 @@ header {
 
 .program-title h1 {
 	color: #ffffff;
+	font-family: "Trade Gothic", Oswald, sans-serif;
 	font-weight: bold;
 	margin: 3rem;
 }
