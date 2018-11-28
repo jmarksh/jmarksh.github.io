@@ -5,6 +5,8 @@ collections:
 	permalink: /programs/:path/
   personnel:
 
+permalinks: pretty
+
 defaults:
   - scope:
       path: ""
