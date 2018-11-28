@@ -3,6 +3,5 @@ collections:
   programs:
     output: true
 	permalink: /programs/:path/
-  personnel:
 
 permalinks: pretty
