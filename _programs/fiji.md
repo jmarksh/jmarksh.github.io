@@ -24,8 +24,12 @@ activities: |
   Hikes, snorkel Fijian reefs, carry out citizen science and service-learning projects.
 ---
 
-<h2>Sustainability in Action</h2>
-<p>Fiji is a truly diverse nation, steeped in Pacific, British, and Indian cultures that span millennia. It is also often named the world's happiest country. Our program delves into the cultural conflicts that have defined the landscape of Fiji with the goal of placing students beyond the "tourist bubble".</p>
-<p>On this program, you will spend your time in both a remote eco-resort and a Fijian village. While there, you will conduct citizen science projects on the nearby reef system and carry out a service-learning project to aid those who live on the island.</p>
-<p>Amenities are low on this trip (limited opportunities for showers and cell service), but the challenge is worth the reward.</p>
-<p>While this program may be attended as a stand-alone program, it is typically combined with one of two programs: <a href="maymester.html">Maymester Australia and New Zealand</a> or <a href="#">Summer Australia</a></p>
+## Sustainability in Action
+
+Fiji is a truly diverse nation, steeped in Pacific, British, and Indian cultures that span millennia. It is also often named the world's happiest country. Our program delves into the cultural conflicts that have defined the landscape of Fiji with the goal of placing students beyond the "tourist bubble".
+
+On this program, you will spend your time in both a remote eco-resort and a Fijian village. While there, you will conduct citizen science projects on the nearby reef system and carry out a service-learning project to aid those who live on the island.
+
+Amenities are low on this trip (limited opportunities for showers and cell service), but the challenge is worth the reward.
+
+While this program may be attended as a stand-alone program, it is typically combined with one of two programs: [Maymester Australia and New Zealand](/maymester.html) and [Summer Australia](#).
