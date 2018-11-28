@@ -2,9 +2,9 @@
 layout: program
 
 title: |
-  Maymester Australia and New Zealand
+  Fiji
 subtitle: |
-  International Business
+  
 image: |
   /assets/images/banner03.jpg
 itinerary: 
