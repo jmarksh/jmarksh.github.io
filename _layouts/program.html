@@ -1,31 +1,32 @@
 ---
+layout: default
 ---
 
 <div class="program-title">
-	<h1>{{ program.title }}</h1>
+	<h1>{{ page.title }}</h1>
 </div>
 
 <div class="banner">
-	<img src="{{ program.image }}" />
+	<img src="{{ page.image }}" />
 </div>
 
 <div class="program-details">
 	<div>
-		<h5><strong>Program Fee:</strong> {{ program.fee }}</h5>
+		<h5><strong>Program Fee:</strong> {{ page.fee }}</h5>
 		<p>Includes $300 nonrefundable commitment deposit charged during the application process. Does not include UGA tuition or fees, airfare, course materials, or personal spending.<a href="http://busfin.uga.edu/bursar/bursar_quick_links/">Click here for a detailed cost estimate</a>.</p>
 	</div>
 	<div>
-		<h5><strong>Program Dates:</strong><br />{{ program.dates }}</h5>
-		<p>Dates include travel days to and from the United States. Travel dates will vary if combining with another program.</p>
+		<h5><strong>Program Dates:</strong><br />{{ page.dates }}</h5>
+		<p>Dates include travel days to and from the United States. Travel dates will vary if combining with another page.</p>
 	</div>
 	<div>
-		<h5><strong>Application Deadline:</strong><br />{{ program.deadline }}</h5>
+		<h5><strong>Application Deadline:</strong><br />{{ page.deadline }}</h5>
 		<p>However, programs typically fill 9+ months in advance. Apply early!</p>
 	</div>
 </div>
 
 <div class="apply">
-	<a href="{{ program.application }}" class="button button-primary">Apply Now to {{ program.title }}{% if program.subtitle == true %} {{ program.subtitle }}{% endif %}</a>
+	<a href="{{ page.application }}" class="button button-primary">Apply Now to {{ page.title }}{% if page.subtitle == true %} {{ page.subtitle }}{% endif %}</a>
 </div>
 
 <main>
@@ -34,10 +35,10 @@
 		{{ content }}
 		
 		<h5><strong>Locations</strong></h5>
-		<p>{{ locations }} (<a href="{{ program.itinerary }}">Click here for a sample itinerary.</a>)</p>
+		<p>{{ locations }} (<a href="{{ page.itinerary }}">Click here for a sample itinerary.</a>)</p>
 		<h5><strong>Activities</strong></h5>
 		<p>{{ activities }}</p>
-		<h5><strong>Credits:</strong> {{ program.credits }} credit hours</h5>
+		<h5><strong>Credits:</strong> {{ page.credits }} credit hours</h5>
 	</div>
 </main>
 
