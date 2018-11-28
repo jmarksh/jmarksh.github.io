@@ -26,3 +26,5 @@ activities: |
 
 <p>Visit two worlds in one program! Travel the east coast of Australia from Sydney to the Great Barrier Reef with a pitstop in the Outback. Experience New Zealand's "100% Pure" ethos on the South Island from coast to coast with a mountain hiatus in between.</p>
 <p>This program is open to all students from UGA and from other institutions (all students pay in-state tuition rates), and no prior knowledge is assumed. <a href="/programs/fiji/">An optional add-on 8-day program in Fiji (3 credits)</a> is available to continue your journey abroad.</p>
+
+<p>{% for program in site.programs %}<a href="{{ program.url }}">{{ program.title }}{% endfor %}</a></p>
