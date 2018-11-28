@@ -4,4 +4,4 @@ title: Discover Abroad
 collections:
   programs:
     output: true
-    permalink: /:collection/:name
+    permalink: /programs/:path
