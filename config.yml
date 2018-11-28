@@ -1,8 +1,2 @@
 url: http://jmarksh.github.io/
-title: Discover Abroad
-collections:
-  programs:
-    output: true
-	permalink: /programs/:path/
-
-permalinks: pretty
+site-title: Discover Abroad
