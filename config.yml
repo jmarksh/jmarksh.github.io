@@ -1,7 +1,6 @@
 url: http://jmarksh.github.io/
 title: Discover Abroad
 
-collections:
-  - programs:
-      output: true
-      permalink: /programs/:path
+collections_dir: collections
+  output: true
+  permalink: /:collection/:path
