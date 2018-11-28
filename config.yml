@@ -6,14 +6,3 @@ collections:
   personnel:
 
 permalinks: pretty
-
-defaults:
-  - scope:
-      path: ""
-      type: "programs"
-    values:
-      layout: "program"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
