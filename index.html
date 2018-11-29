@@ -1,6 +1,10 @@
 ---
 layout: default
 title: Home
+carousel:
+  - /assets/images/banner01.jpg
+  - /assets/images/banner03.jpg
+  - /assets/images/banner05.jpg
 ---
 
 <div class="commits">
@@ -21,130 +25,80 @@ title: Home
 </div>
 
 <div class="banner">
-	<ul class="slides">
-<input type="radio" name="radio-buttons" id="img-1" checked />
-<li class="slide-container">
-	<div class="slide-image">
-		<img src="/assets/images/banner01.jpg">
-	</div>
-	<div class="carousel-controls">
-		<label for="img-3" class="prev-slide">
-			<span>&lsaquo;</span>
-		</label>
-		<label for="img-2" class="next-slide">
-		  <span>&rsaquo;</span>
-		</label>
-	</div>
-</li>
-<input type="radio" name="radio-buttons" id="img-2" />
-<li class="slide-container">
-	<div class="slide-image">
-		<img src="/assets/images/banner03.jpg">
-	</div>
-	<div class="carousel-controls">
-		<label for="img-1" class="prev-slide">
-			<span>&lsaquo;</span>
-		</label>
-		<label for="img-3" class="next-slide">
-			<span>&rsaquo;</span>
-		</label>
-	</div>
-</li>
-<input type="radio" name="radio-buttons" id="img-3" />
-<li class="slide-container">
-	<div class="slide-image">
-		<img src="/assets/images/banner05.jpg">
-	</div>
-	<div class="carousel-controls">
-		<label for="img-2" class="prev-slide">
-			<span>&lsaquo;</span>
-		</label>
-		<label for="img-1" class="next-slide">
-			<span>&rsaquo;</span>
-		</label>
-	</div>
-</li>
-<div class="carousel-dots">
-	<label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-	<label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-	<label for="img-3" class="carousel-dot" id="img-dot-3"></label>
-</div>
-</ul>
+	{% include carousel.html %}
 </div>
 
 <div class="mission">
 	<p>Providing over 300 students per year with a <a href="https://www.iie.org/Research-and-Insights/Best-Practices-Resource/Award-Winners/Study-Abroad/University-of-Georgia-2012">national award-winning</a> international education.<span class="big-only"> Emphasizing the importance of conservation and inter-generational equity.</span><span class="desktop-only"> Developing global citizens that care for their neighbors at home and abroad.</span></p>
 </div>
 
-<main>
-	<section>
-		<div class="products">
-			<div class="product">
-				<img src="/assets/images/banner02.jpg" />
-				<div class="product-description">
-					<h4>Spring Semester Australia, New Zealand, Fiji, and Hawaii</h4>
-					<p>January 22 - April 1, 2019<br />$6,995*</p>
-				</div>
-				<a class="button button-primary">More Info</a>
+<main class="collection">
+	<div class="products">
+		<div class="product">
+			<img src="/assets/images/banner02.jpg" />
+			<div class="product-description">
+				<h4>Spring Semester Australia, New Zealand, Fiji, and Hawaii</h4>
+				<p>January 22 - April 1, 2019<br />$6,995*</p>
 			</div>
-			<div class="product">
-				<img src="/assets/images/banner02.jpg" />
-				<div class="product-description">
-					<h4>Spring Break Hawaii</h4>
-					<p>Date - Date<br />$1,195*</p>
-				</div>
-				<a class="button button-primary">More Info</a>
-			</div>
-			<div class="product">
-				<img src="/assets/images/banner02.jpg" />
-				<div class="product-description">
-					<h4>Maymester Australia and New Zealand</h4>
-					<p>May 9 - June 3, 2019<br />$2,995*</p>
-				</div>
-				<a class="button button-primary" href="maymester.html">More Info</a>
-			</div>
-			<div class="product">
-				<img src="/assets/images/banner04.jpg" />
-				<div class="product-description">
-					<h4>Fiji: Ecotourism and Sustainability</h4>
-					<p>June 3 - 10, 2019<br />$895*</p>
-				</div>
-				<a class="button button-primary" href="fiji.html">More Info</a>
-			</div>
-			<div class="product">
-				<img src="/assets/images/banner02.jpg" />
-				<div class="product-description">
-					<h4>Summer Australia</h4>
-					<p>Date - Date<br />$2,995*</p>
-				</div>
-				<a class="button button-primary">More Info</a>
-			</div>
-			<div class="product">
-				<img src="/assets/images/banner02.jpg" />
-				<div class="product-description">
-					<h4>Summer England and Scotland</h4>
-					<p>Date - Date<br />$2,995*</p>
-				</div>
-				<a class="button button-primary">More Info</a>
-			</div>
-			<div class="product">
-				<img src="/assets/images/banner02.jpg" />
-				<div class="product-description">
-					<h4>Summer Great Smoky Mountains National Park</h4>
-					<p>Date - Date<br />$565*</p>
-				</div>
-				<a class="button button-primary">More Info</a>
-			</div>
-			<div class="product">
-				<img src="/assets/images/banner00.jpg" />
-				<div class="product-description">
-					<h4>Winter Break Australia</h4>
-					<p>Date - Date<br />$2,995*</p>
-				</div>
-				<a class="button button-primary">More Info</a>
-			</div>
+			<a class="button button-primary">More Info</a>
 		</div>
-	</section>
+		<div class="product">
+			<img src="/assets/images/banner02.jpg" />
+			<div class="product-description">
+				<h4>Spring Break Hawaii</h4>
+				<p>Date - Date<br />$1,195*</p>
+			</div>
+			<a class="button button-primary">More Info</a>
+		</div>
+		<div class="product">
+			<img src="/assets/images/banner02.jpg" />
+			<div class="product-description">
+				<h4>Maymester Australia and New Zealand</h4>
+				<p>May 9 - June 3, 2019<br />$2,995*</p>
+			</div>
+			<a class="button button-primary" href="maymester.html">More Info</a>
+		</div>
+		<div class="product">
+			<img src="/assets/images/banner04.jpg" />
+			<div class="product-description">
+				<h4>Fiji: Ecotourism and Sustainability</h4>
+				<p>June 3 - 10, 2019<br />$895*</p>
+			</div>
+			<a class="button button-primary" href="fiji.html">More Info</a>
+		</div>
+		<div class="product">
+			<img src="/assets/images/banner02.jpg" />
+			<div class="product-description">
+				<h4>Summer Australia</h4>
+				<p>Date - Date<br />$2,995*</p>
+			</div>
+			<a class="button button-primary">More Info</a>
+		</div>
+		<div class="product">
+			<img src="/assets/images/banner02.jpg" />
+			<div class="product-description">
+				<h4>Summer England and Scotland</h4>
+				<p>Date - Date<br />$2,995*</p>
+			</div>
+			<a class="button button-primary">More Info</a>
+		</div>
+		<div class="product">
+			<img src="/assets/images/banner02.jpg" />
+			<div class="product-description">
+				<h4>Summer Great Smoky Mountains National Park</h4>
+				<p>Date - Date<br />$565*</p>
+			</div>
+			<a class="button button-primary">More Info</a>
+		</div>
+		<div class="product">
+			<img src="/assets/images/banner00.jpg" />
+			<div class="product-description">
+				<h4>Winter Break Australia</h4>
+				<p>Date - Date<br />$2,995*</p>
+			</div>
+			<a class="button button-primary">More Info</a>
+		</div>
+	</div>
 </main>
 
 <aside class="extra">

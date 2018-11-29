@@ -1,0 +1,39 @@
+<ul class="slides">
+	{% for image in page.carousel limit: 6 %}
+		{% if forloop.first %}
+			<input type="radio" name="radio-buttons" id="img-0" checked />
+			<li class="slide-container">
+				<div class="slide-image">
+					<label for="img-1">
+						<img src="{{ image }}">
+					</label>
+				</div>
+			</li>
+			{% else %}
+			{% if forloop.last %}
+				<input type="radio" name="radio-buttons" id="img-{{ forloop.index0 }}" />
+				<li class="slide-container">
+					<div class="slide-image">
+						<label for="img-0">
+							<img src="{{ image }}">
+						</label>
+					</div>
+				</li>
+				{% else %}
+				<input type="radio" name="radio-buttons" id="img-{{ forloop.index0 }}" />
+				<li class="slide-container">
+					<div class="slide-image">
+						<label for="img-{{ forloop.index }}">
+							<img src="{{ image }}">
+						</label>
+					</div>
+				</li>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	<div class="carousel-dots">
+		{% for image in page.carousel %}
+			<label for="img-{{ forloop.index0 }}" class="carousel-dot" id="img-dot-{{ forloop.index0 }}"></label>
+		{% endfor %}
+	</div>
+</ul>

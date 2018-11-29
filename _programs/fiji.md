@@ -1,21 +1,25 @@
 ---
-layout: program
-
 title: |
-  Fiji
+  Fiji Add-On
 subtitle: |
-  
-image: |
-  /assets/images/banner03.jpg
-itinerary: 
+  Ecotourism and Sustainability
+
+# location of files
+image: /assets/images/banner03.jpg
+itinerary:
+costs:
+
+# program details
 fee: |
   $2,995
+deposit: |
+  $300
 dates: |
-  May 9 - June 3, 2019
+  June 1 - 10, 2019
 deadline: |
   March 19
 credits: |
-  6
+  3
 application: |
   http://studyaway.uga.edu/
 locations: |

@@ -142,11 +142,11 @@ nav button:hover {
 --------------------------------------------------*/
 
 .banner {
-	height: 450px;
+	height: 400px;
 }
 @media (max-width: 680px) {
 	.banner {
-		height: 300px;
+		height: 200px;
 	}
 }
 
@@ -159,7 +159,7 @@ nav button:hover {
 ul.slides {
     display: block;
     position: relative;
-    height: 450px;
+    height: 400px;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -167,7 +167,7 @@ ul.slides {
 }
 @media (max-width: 680px) {
 	ul.slides {
-		height: 300px;
+		height: 200px;
 	}
 }
 
@@ -186,48 +186,8 @@ ul.slides input {
     height: 100%;
     top: 0;
     opacity: 0;
+		z-index: 2;
     transition-duration: .25s;
-}
-
-.carousel-controls {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    font-size: 10rem;
-    line-height: 30rem;
-    color: #ffffff;
-}
-
-.carousel-controls label {
-    display: none;
-    position: absolute;
-    padding: 0 2rem;
-    opacity: 0;
-    transition: opacity .1s;
-    cursor: pointer;
-}
-@media (max-width: 680px) {
-	.carousel-controls label {
-		opacity: 1;
-	}
-}
-
-.carousel-controls label:hover {
-    opacity: 1;
-}
-
-.carousel-controls .prev-slide {
-    width: 49%;
-    text-align: left;
-    left: 0;
-}
-
-.carousel-controls .next-slide {
-    width: 49%;
-    text-align: right;
-    right: 0;
 }
 
 .carousel-dots {
@@ -241,28 +201,29 @@ ul.slides input {
 
 .carousel-dots .carousel-dot {
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     background-color: #ffffff;
-    opacity: 0.5;
+    opacity: 0.60;
     margin: 1rem;
 }
 
 input:checked + .slide-container .slide-image {
     opacity: 1;
+		z-index: 4;
 }
 
-input:checked + .slide-container .carousel-controls label {
+input:checked + .slide-container label {
      display: block;
 }
 
+input#img-0:checked ~ .carousel-dots label#img-dot-0,
 input#img-1:checked ~ .carousel-dots label#img-dot-1,
 input#img-2:checked ~ .carousel-dots label#img-dot-2,
 input#img-3:checked ~ .carousel-dots label#img-dot-3,
 input#img-4:checked ~ .carousel-dots label#img-dot-4,
-input#img-5:checked ~ .carousel-dots label#img-dot-5,
-input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+input#img-5:checked ~ .carousel-dots label#img-dot-5 {
 	opacity: 1;
 }
 
@@ -334,49 +295,42 @@ input#img-6:checked ~ .carousel-dots label#img-dot-6 {
 .program-title h1 {
 	color: #ffffff;
 	font-family: "Trade Gothic", Oswald, sans-serif;
-	font-weight: bold;
-	margin: 3rem;
+	margin: 3rem 7%;
 }
 
 /* -------------------- Program Details and Apply Button (come together) -------------------- */
 
 .program-details {
 	padding: 3rem 7%;
-	background-color: #D6D2C4;
 	display: grid;
 	grid-gap: 2rem;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	grid-template-rows: auto;
 }
 
-.program-details p {
+.program-details p:last-child {
 	margin: 0;
 }
 
 .apply {
-	padding: 3rem 7% 1.5rem 7%;
-	text-align: center;
-	display: grid;
+	display: block;
+	margin: 3rem 7% 0;
+	width: auto;
 }
 
 /* --------------------------------------------------
--- Main
+-- Product display
 --------------------------------------------------*/
 
-main {
+.collection {
 	padding: 2rem 7%;
 	display: grid;
 	grid-gap: 3rem;
 	grid-auto-rows: auto;
 }
 @media (max-width: 680px) {
-	main {
+	.collection {
 		grid-gap: 2rem;
 	}
-}
-
-.divider {
-	padding: 3rem 0;
-	border-top: 1px solid #BA0C2F;
 }
 
 /* -------------------- Products -------------------- */
@@ -422,6 +376,11 @@ main {
 	padding: 3rem 7%;
 	background-color: #004E60;
 	color: #ffffff;
+}
+
+.gallery {
+	padding: 3rem 7%;
+	background-color: #D6D2C4;
 }
 
 /*--------------------------------------------------

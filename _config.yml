@@ -4,4 +4,12 @@ collections:
   programs:
     output: true
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: programs
+    values:
+      layout: "program"
+
 future: true
