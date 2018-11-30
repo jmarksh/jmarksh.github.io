@@ -1,8 +1,7 @@
 ---
-title: |
-  Maymester Australia and New Zealand
-subtitle: |
-  International Business
+order: 5
+
+title: Maymester Australia and New Zealand
 
 # location of files
 image: /assets/images/banner03.jpg

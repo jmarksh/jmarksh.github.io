@@ -1,8 +1,7 @@
 ---
-title: |
-  Fiji Add-On
-subtitle: |
-  Ecotourism and Sustainability
+order: 6
+
+title: Add-On Fiji Ecotourism and Sustainability
 
 # location of files
 image: /assets/images/banner03.jpg
@@ -10,22 +9,13 @@ itinerary:
 costs:
 
 # program details
-fee: |
-  $2,995
-deposit: |
-  $300
-dates: |
-  June 1 - 10, 2019
-deadline: |
-  March 19
-credits: |
-  3
-application: |
-  http://studyaway.uga.edu/
-locations: |
-  Nadi on the island of Viti Levu and Naviti in the Yasawa Islands, to stay at Botaira and the Fijian village of Soso.
-activities: |
-  Hikes, snorkel Fijian reefs, carry out citizen science and service-learning projects.
+fee: $2,995
+deposit: $300
+dates: June 1 - 10, 2019
+deadline: March 19
+credits: 3
+application: http://studyaway.uga.edu/
+locations: [Nadi, Naviti, Botaira, Soso]
 ---
 
 ## Sustainability in Action

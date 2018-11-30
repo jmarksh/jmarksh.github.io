@@ -137,6 +137,57 @@ nav button:hover {
 	display: block;
 }
 
+/* -------------------- Program Title -------------------- */
+
+.program-title {
+	text-align: center;
+	background-color: #BA0C2F;
+}
+
+.program-title h1 {
+	color: #ffffff;
+	font-family: "Trade Gothic", Oswald, sans-serif;
+	margin: 3rem 7%;
+}
+
+/* -------------------- Commit-Tos -------------------- */
+
+.commits {
+	padding: 3rem 7%;
+	background-color: #BA0C2F;
+	font-weight: bold;
+	color: #ffffff;
+	letter-spacing: .3rem;
+	text-transform: uppercase;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 3rem;
+	justify-items: center;
+}
+@media (max-width: 1000px) {
+	.commits {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 680px) {
+	.commits {
+		grid-template-columns: 1fr;
+	}
+}
+
+#commit-to {
+	font-family: "Merriweather", serif;
+	font-size: 1.6rem;
+	line-height: 2rem;
+}
+
+#commit-action {
+	font-family: Trade Gothic, Oswald, sans-serif;
+	font-size: 3.5rem;
+	line-height: 3.5rem;
+	white-space: nowrap;
+}
+
 /*--------------------------------------------------
 -- Banner
 --------------------------------------------------*/
@@ -232,44 +283,6 @@ input#img-5:checked ~ .carousel-dots label#img-dot-5 {
 -- Highlights
 --------------------------------------------------*/
 
-/* -------------------- Commit-Tos -------------------- */
-
-.commits {
-	padding: 3rem;
-	background-color: #BA0C2F;
-	font-weight: bold;
-	color: #ffffff;
-	letter-spacing: .3rem;
-	text-transform: uppercase;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 3rem;
-	justify-items: center;
-}
-@media (max-width: 1000px) {
-	.commits {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-@media (max-width: 680px) {
-	.commits {
-		grid-template-columns: 1fr;
-	}
-}
-
-#commit-to {
-	font-family: "Merriweather", serif;
-	font-size: 1.6rem;
-	line-height: 2rem;
-}
-
-#commit-action {
-	font-family: Trade Gothic, Oswald, sans-serif;
-	font-size: 3.5rem;
-	line-height: 3.5rem;
-	white-space: nowrap;
-}
-
 /* -------------------- Mission -------------------- */
 
 .mission {
@@ -283,19 +296,6 @@ input#img-5:checked ~ .carousel-dots label#img-dot-5 {
 
 .mission p {
 	margin: 0;
-}
-
-/* -------------------- Program Title -------------------- */
-
-.program-title {
-	text-align: center;
-	background-color: #BA0C2F;
-}
-
-.program-title h1 {
-	color: #ffffff;
-	font-family: "Trade Gothic", Oswald, sans-serif;
-	margin: 3rem 7%;
 }
 
 /* -------------------- Program Details and Apply Button (come together) -------------------- */
@@ -318,14 +318,15 @@ input#img-5:checked ~ .carousel-dots label#img-dot-5 {
 }
 
 /* --------------------------------------------------
--- Product display
+-- Collection display
 --------------------------------------------------*/
 
 .collection {
-	padding: 2rem 7%;
+	padding: 3rem 7%;
 	display: grid;
 	grid-gap: 3rem;
-	grid-auto-rows: auto;
+	align-items: start;
+	grid-template-columns: repeat(auto-fit, minmax(260px, auto));
 }
 @media (max-width: 680px) {
 	.collection {
@@ -333,30 +334,21 @@ input#img-5:checked ~ .carousel-dots label#img-dot-5 {
 	}
 }
 
-/* -------------------- Products -------------------- */
-
-.products {
-	padding-top: 3rem;
-	text-align: center;
-	display: grid;
-	grid-gap: 3rem;
-	align-items: start;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr) );
-}
-@media (max-width: 680px) {
-	.products {
-		grid-gap: 3rem;
-	}
-}
-
 .product {
 	border: 1px solid #cccccc;
 	border-radius: 4px;
 	box-shadow: 0 0 1px 0 #999999;
+	text-align: center;
 }
 
 .product img {
+	height: 160px;
 	width: 100%;
+	object-fit: cover;
+}
+
+.product p {
+	margin: 0;
 }
 
 .product-description {
@@ -376,6 +368,10 @@ input#img-5:checked ~ .carousel-dots label#img-dot-5 {
 	padding: 3rem 7%;
 	background-color: #004E60;
 	color: #ffffff;
+}
+
+.extra p:last-child {
+	margin: 0;
 }
 
 .gallery {
