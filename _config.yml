@@ -1,1 +1,12 @@
 permalink: pretty
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+  - scope:
+      path: ""
+    values:
+      layout: post
+      
