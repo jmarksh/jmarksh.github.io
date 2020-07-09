@@ -1,0 +1,13 @@
+---
+layout: default
+title: Plants
+---
+
+{% for plant in site.data.plants %}
+  <h2><i>{{ plant.genus }} {{ plant.species }}{% if plant.variety %} {{ plant.variety }}{% endif %}{% if plant.type %} {{ plant.type }}{% endif %}</i></h2>
+  <ul>
+    <li>Common Names: "{{ plant.common }}"</li>
+    <li>Family: {{ plant.family }}</li>
+    <li>Location: {{ plant.location }}</li>
+  </ul>
+{% endfor %}
