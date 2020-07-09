@@ -1,0 +1,17 @@
+---
+layout: default
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: about.html
+  - title: The Boy Sprouts
+    url: /theboysprouts
+    subnav:
+      - title: Plants
+        url: plants.html
+---
+
+{% include nan.html nav=page.nav %}
+
+{{ content }}
