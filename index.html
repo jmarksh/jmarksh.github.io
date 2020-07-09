@@ -1,21 +1,14 @@
-<html>
-	<head>
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="styles.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta charset="utf-8">
-	</head>
+---
+layout: default
+---
 
-  <body>
-		<h1>Posts</h1>
-		<ul>
-			{% for post in site.posts %}
-				<li>
-					<a href="{{ post.url }}">{{ post.title }}</a>
-				</li>
-			{% endfor %}
-		</ul>
-
-
-  </body>
-</html>
+{% if site.posts %}
+	<h1>Posts</h1>
+	<ul>
+		{% for post in site.posts %}
+			<li>
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}
