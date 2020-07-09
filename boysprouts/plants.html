@@ -3,11 +3,13 @@ layout: default
 title: Plants
 ---
 
-{% for plant in site.data.plants %}
-  <h2><i>{{ plant.genus }} {{ plant.species }}{% if plant.variety %} {{ plant.variety }}{% endif %}{% if plant.type %} {{ plant.type }}{% endif %}</i></h2>
+{% assign sortedByFamily = site.data.plants | group_by: "family" | sort: "name" %}
+{% for f in sortedByFamily %}
+  <h2>{{ f.family }}</h2>
   <ul>
-    <li>Common Names: "{{ plant.common }}"</li>
-    <li>Family: {{ plant.family }}</li>
-    <li>Location: {{ plant.location }}</li>
+    {% assign sortedBySpecies = sortedByFamily | sort: "species"% }
+    {% for s in sortedBySpecies %}
+      <li><i>{{ plant.genus }} {{ plant.species }}{% if plant.variety %} '{{ plant.variety }}'{% endif %}{% if plant.type %} {{ plant.type }}{% endif %}</i></li>
+    {% endfor %}
   </ul>
 {% endfor %}
