@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 	<head>
 		<title></title>
@@ -9,15 +10,7 @@
 
 {% include hello.html %}
 
-{% if site.posts %}
 	<h1>Posts</h1>
-	<ul>
-		{% for post in site.posts %}
-			<li>
-				<a href="{{ post.url }}">{{ post.title }}</a>
-			</li>
-		{% endfor %}
-	</ul>
-{% endif %}
-</body>
+
+	</body>
 </html>
