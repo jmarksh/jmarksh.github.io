@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Making a Jekyll Site
+layout: post
 category: Coding
 tags: Jekyll HTML CSS
 author: Josh
