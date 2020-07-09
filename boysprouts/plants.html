@@ -7,9 +7,9 @@ title: Plants
 {% for f in sortedByFamily %}
   <h2>{{ f.family }}</h2>
   <ul>
-    {% assign sortedBySpecies = sortedByFamily | sort: "species"% }
+    {% assign sortedBySpecies = sortedByFamily | sort: "species" %}
     {% for s in sortedBySpecies %}
-      <li><i>{{ plant.genus }} {{ plant.species }}{% if plant.variety %} '{{ plant.variety }}'{% endif %}{% if plant.type %} {{ plant.type }}{% endif %}</i></li>
+      <li><i>{{ s.genus }} {{ s.species }}{% if s.variety %} '{{ s.variety }}'{% endif %}{% if s.type %} {{ s.type }}{% endif %}</i></li>
     {% endfor %}
   </ul>
 {% endfor %}
