@@ -3,3 +3,26 @@
 
 img
   max-width: 100%
+
+.familyCollection
+  display: grid
+  grid-gap: 1rem
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+  margin: 0 minmax(3%, auto)
+
+.plantCard
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+  transition: 0.25s
+  border-radius: 5px
+
+.plantCard:hover
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+
+.plantDead
+  background-color: #FD151B
+  width: 100%
+  height: 150px
+  border-radius: 5px
+
+.plantName
+  padding: 2px 16px
