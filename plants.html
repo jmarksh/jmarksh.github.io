@@ -13,7 +13,7 @@ title: Plants
       {% assign sorted_by_genus = sorted_by_species | sort: "genus" %}
         {% for p in sorted_by_genus %}
           <div class="plantCard">
-            <div class="plant{{ p.location }}">
+            <div class="color {{ p.location }}">
             </div>
             <div class="plantName">
               <i>{{ p.genus }}{% if p.species %} {{ p.species }}{% else %} sp.{% endif %}</i>{% if p.variety %} '{{ p.variety }}'{% endif %}{% if p.type %} {{ p.type }}{% endif %}
