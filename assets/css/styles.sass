@@ -5,13 +5,15 @@ img
   max-width: 100%
 
 .plantCollection
-  margin: 0 minmax(3%, auto)
+  margin: 0 auto
+  width: 94%
   max-width: 900px
 
 .familyCollection
   display: grid
   grid-gap: 33px
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+  margin: 0 auto
   width: 100%
 
 .plantCard
@@ -22,11 +24,19 @@ img
 .plantCard:hover
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
 
+.plantDead, .plantIn, .plantYard
+  width: 100%
+  height: 50px
+  border-radius: 5px 5px 0 0
+
 .plantDead
   background-color: #FD151B
-  width: 100%
-  height: 150px
-  border-radius: 5px
+
+.plantIn
+  background-color: #849324
+
+.plantYard
+  background-color: #FFB30F
 
 .plantName
-  padding: 2px 16px
+  padding: 15px
