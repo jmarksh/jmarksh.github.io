@@ -1,6 +1,9 @@
 ---
 ---
 // BASELINE FORMATTING
+*
+  box-sizing: border-box
+
 html
   font-size: 62.5%
 
@@ -97,31 +100,37 @@ hr
   border-width: 0
   border-top: 1px solid #E1E1E1
 
-.plantCollection
+// SPECIFIC FORMATTING
+
+.container
   margin: 0 auto
   width: 90%
-  max-width: 990px
+  max-width: 960px
+  clear: both
 
-.familyCollection
+.cardCollection
   display: grid
   grid-gap: 30px
-  grid-template-columns: repeat(auto-fit, 300px)
+  grid-template-columns: repeat(auto-fit, minmax(100%, 290px))
   margin: 0 auto
   padding: 0 0 30px 30px
   clear: both
 
-.plantCard
+.card
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
-  transition: 0.25s
+  transition: 0.2s
   border-radius: 5px
 
-.plantCard:hover
+.card:hover
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
 
-.color
+.cardColor
   width: 100%
   height: 50px
   border-radius: 5px 5px 0 0
+
+.cardContent
+  padding: 15px
 
 .Dead
   background-color: #FD151B
@@ -137,6 +146,3 @@ hr
 
 .Pond
   background-color: #01295F
-
-.plantName
-  padding: 15px

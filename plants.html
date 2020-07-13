@@ -2,24 +2,22 @@
 layout: default
 title: Plants
 ---
-<div class="plantCollection">
   {% assign plant_families = site.data.plants | group_by: "family" | sort: "name" %}
   {% for f in plant_families %}
     <h2>{{ f.name }}</h2>
-    <div class="familyCollection">
+    <div class="cardCollection">
       {% assign sorted_by_type = f.items | sort: "type" %}
       {% assign sorted_by_variety = sorted_by_type | sort: "variety" %}
       {% assign sorted_by_species = sorted_by_variety | sort: "species" %}
       {% assign sorted_by_genus = sorted_by_species | sort: "genus" %}
         {% for p in sorted_by_genus %}
-          <div class="plantCard">
-            <div class="color {{ p.location }}">
+          <div class="card">
+            <div class="cardColor {{ p.location }}">
             </div>
-            <div class="plantName">
+            <div class="cardContent">
               <i>{{ p.genus }}{% if p.species %} {{ p.species }}{% else %} sp.{% endif %}</i>{% if p.variety %} '{{ p.variety }}'{% endif %}{% if p.type %} {{ p.type }}{% endif %}
             </div>
           </div>
         {% endfor %}
       </div>
   {% endfor %}
-</div>
