@@ -104,14 +104,13 @@ hr
 
 .container
   margin: 0 auto
-  width: 90%
-  max-width: 960px
+  width: min(90%, 960px)
   clear: both
 
 .cardCollection
   display: grid
   grid-gap: 30px
-  grid-template-columns: repeat(auto-fit, minmax(100%, 290px))
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
   margin: 0 auto
   padding: 0 0 30px 30px
   clear: both
