@@ -5,10 +5,19 @@ title: Home | Joshua Hanna
 
 <h1>Hello, again, World!</h1>
 
-<p>Grid up</p>
-
-<ul>
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
 	{% for post in site.posts %}
-		<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+		<tr>
+			<td><a href="{{ post.url }}">{{ post.title }}</a></td>
+			<td>{{ post.date }}</td>
+		</tr>
 	{% endfor %}
-</ul>
+	</tbody>
+</table>
