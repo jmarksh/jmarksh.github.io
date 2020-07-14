@@ -13,7 +13,8 @@ title: Plants
         {% for p in sorted_by_genus %}
           <div class="card">
             <div class="cardContent">
-              <i>{{ p.genus }}{% if p.species %} {{ p.species }}{% else %} sp.{% endif %}</i>{% if p.variety %} '{{ p.variety }}'{% endif %}{% if p.type %} {{ p.type }}{% endif %}
+              <i>{{ p.genus }}{% if p.species %} {{ p.species }}{% else %} sp.{% endif %}</i>{% if p.variety %} '{{ p.variety }}'{% endif %}{% if p.type %} {{ p.type }}{% endif %}<br />
+              <a href="https://www.google.com/search?q={{ p.genus }}+{{ p.species }}">Search Google</a>
             </div>
           </div>
         {% endfor %}
