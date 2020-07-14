@@ -1,3 +1,18 @@
+# Name of website
+title: Joshua Hanna
+
+# Short description of website
+description:
+
+# Your name
+author: Joshua Hanna
+
+# Your profile image (like Facebook)
+selfie: /assets/img/profile.jpg
+
+# Your email address
+email: jmarkh10@gmail.com
+
 baseurl: joshuahanna.com
 
 collections:
