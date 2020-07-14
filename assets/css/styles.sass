@@ -145,11 +145,14 @@ footer a
   color: #52B3CB
 
 .profile
-  display: grid
-  grid-template-columns: repeat(auto-fit, 30rem)
-  grid-gap: 2rem
-  place-items: start center
-  margin-bottom: 2rem
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  margin: -1.5rem
+
+.profile > div
+  flex: 0 1 30rem
+  margin: 1.5rem
 
 .profile img
   object-fit: contain
