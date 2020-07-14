@@ -1,12 +1,11 @@
 baseurl: joshuahanna.com
-permalink: pretty
+
+collections:
+  posts:
+    permalink: /:year/:month/:day/:title/
 
 defaults:
   - scope:
       path: "assets/img"
     values:
       image: true
-  - scope:
-      path: ""
-    values:
-      layout: post
