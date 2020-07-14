@@ -5,16 +5,17 @@ title: Home | Joshua Hanna
 
 <h1>Hello, again, World!</h1>
 <hr />
-<h2>Photography Collection</h2>
+<h2>Photography</h2>
 <div class="photoMasonry"></div>
 <hr />
 <div class="threeColumns">
 	<div class="wrapper">
 		<h2>Blog Posts</h2>
-		{% for post in site.posts %}
-			<span class="smaller">{{ post.date | date_to_string }}</span>
-			<a href="{{ post.url }}">{{ post.title }}</a>
+		{% for post in site.posts limit:5 %}
+			<span class="smaller">{{ post.date | date_to_string }}</span><br />
+			<a href="{{ post.url }}">{{ post.title }}</a><br />
 		{% endfor %}
+		<a href="#">Archive</a>
 	</div>
 	<div class="wrapper">
 		<h2>Categories</h2>
