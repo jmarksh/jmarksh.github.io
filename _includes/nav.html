@@ -1,9 +1,1 @@
-<ul>
-  {% for item in include.nav %}
-  <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-
-    {% if item.subnav %}
-      {% include nav.html nav=item.subnav %}
-    {% endif %}
-  {% endfor %}
-</ul>
+<nav>{% for item in include.nav %}<a href="{{ item.url }}">{{ item.title }}</a>{% endfor %}</nav>

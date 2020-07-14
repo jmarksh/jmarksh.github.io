@@ -74,7 +74,7 @@ code
   margin: 0 .2rem
   font-size: 90%
   white-space: nowrap
-  background: #F1F1F1
+  background: rgba(0,0,0,0.2)
   border: 1px solid #E1E1E1
   border-radius: 4px
 pre > code
@@ -85,7 +85,7 @@ pre > code
 table
   margin-bottom: 2.5rem
 th, td
-  padding: 12px 15px
+  padding: 1.2rem 1.5rem
   text-align: left
   border-bottom: 1px solid #E1E1E1
 th:first-child, td:first-child
@@ -106,17 +106,23 @@ hr
 
 // SPECIFIC FORMATTING
 
+// NAV
+nav
+  display: grid
+  grid-template-columns: repeat(autofill, max-content)
+  grid-gap: 1.5rem
+
 .container
   margin: 0 auto
-  width: min(90%, 960px)
+  width: min(90%, 96rem)
   clear: both
 
 .cardCollection
   display: grid
-  grid-gap: 30px
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
+  grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr))
+  grid-gap: 3rem
   margin: 0 auto
-  padding: 0 0 30px 30px
+  padding: 0 0 3rem 3rem
   clear: both
 
 .card
