@@ -5,7 +5,7 @@ title: Plants
   {% assign plant_families = site.data.plants | group_by: "family" | sort: "name" %}
   {% for f in plant_families %}
     <h2>{{ f.name }}</h2>
-    <div class="threeColumns">
+    <div class="deck">
       {% assign sorted_by_type = f.items | sort: "type" %}
       {% assign sorted_by_variety = sorted_by_type | sort: "variety" %}
       {% assign sorted_by_species = sorted_by_variety | sort: "species" %}
