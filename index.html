@@ -9,7 +9,7 @@ title: Home | Joshua Hanna
 <div class="photoMasonry"></div>
 <hr />
 <div class="threeColumns">
-	<div class="wrapper">
+	<div>
 		<h2>Blog Posts</h2>
 		{% for post in site.posts limit:5 %}
 			<p><span class="smaller">{{ post.date | date_to_string }}</span><br />
@@ -17,10 +17,10 @@ title: Home | Joshua Hanna
 		{% endfor %}
 		<p><a href="#">Archive</a></p>
 	</div>
-	<div class="wrapper">
+	<div>
 		<h2>Categories</h2>
 	</div>
-	<div class="wrapper">
+	<div>
 		<h2>Tags</h2>
 	</div>
 </div>
