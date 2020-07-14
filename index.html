@@ -4,20 +4,21 @@ title: Home | Joshua Hanna
 ---
 
 <h1>Hello, again, World!</h1>
-
-<table>
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Date</th>
-		</tr>
-	</thead>
-	<tbody>
-	{% for post in site.posts %}
-		<tr>
-			<td><a href="{{ post.url }}">{{ post.title }}</a></td>
-			<td>{{ post.date | date_to_string }}</td>
-		</tr>
-	{% endfor %}
-	</tbody>
-</table>
+<hr />
+<h2>Photography Collection</h2>
+<div class="photoMasonry"></div>
+<hr />
+<div class="threeColumns">
+	<div class="wrapper">
+		<h2>Blog Posts</h2>
+		{% for post in site.posts %}
+			<span class="smaller">{{ post.date | date_to_string }}</span>
+			<a href="{{ post.url }}">{{ post.title }}</a>
+		{% endfor %}
+	</div>
+	<div class="wrapper">
+		<h2>Categories</h2>
+	</div>
+	<div class="wrapper">
+		<h2>Tags</h2>
+	</div>
