@@ -71,6 +71,7 @@ li
 
 a
   color: #38A2BC
+  text-decoration: none
 a:hover
   color: #52B3CB
 
@@ -118,28 +119,24 @@ hr
   width: min(90%, 96rem)
   clear: both
 
-// HEADER
-header
-  padding-bottom: 2.5rem
-  background-color: #38A2BC
-
 // NAV
 nav
   margin-bottom: 2.5rem
+  padding: 2.5rem 0
   background-color: #38A2BC
 
 nav a
-  font-weight: bold
   color: #FFFFFF
 
 nav .container
   display: grid
-  grid-template-columns: repeat(auto-fill, 12rem)
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr))
   grid-gap: 1.5rem
   place-items: start center
 
 // FOOTER
 footer
+  padding: 2.5rem 0
   background-color: #000000
   color: #EEEEEE
 
