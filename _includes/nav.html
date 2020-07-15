@@ -1,5 +1,5 @@
 <nav>
   <div class="container">
-    {% for item in include.nav %}<a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>{% endfor %}
+    {% for item in include.nav %}<a href="{{ item.url }}">{{ item.title }}</a>{% endfor %}
   </div>
 </nav>
