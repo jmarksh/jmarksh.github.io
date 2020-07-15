@@ -2,10 +2,16 @@
 layout: default
 title: Categories
 ---
+<ul>
+  {% for category in site.categories %}
+    {% capture categoryName %}{{ category | first}}{% endcapture %}
+    <li><a href="#{{ categoryName | slugize }}">{{ categoryName }} ({{ site.categories[categoryName].size }})</a></li>
+  {% endfor %}
+</ul>
 
 {% for category in site.categories %}
   {% capture categoryName %}{{ category | first}}{% endcapture %}
-  <h1>{{ categoryName }}</h1>
+  <h1 id="anchor {{ categoryName | slugize }}">{{ categoryName }}</h1>
   <ul>
     {% for post in site.categories[categoryName] %}
       <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
