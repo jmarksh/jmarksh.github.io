@@ -8,7 +8,7 @@ permalink: /blog/categories
 <ul>
   {% assign categoriesByName = site.posts | group_by: "category" | sort: "name" %}
   {% for category in categoriesByName %}
-    <li><a href="#{{ category.name | slugize }}">{{ category.name }}</a> <span class="smaller">{{ category.size }} Posts</span></li>
+    <li><a href="#{{ category.name | slugify }}">{{ category.name }}</a> <span class="smaller">{{ category.size }} Posts</span></li>
   {% endfor %}
 </ul>
 
@@ -17,11 +17,11 @@ permalink: /blog/categories
 <div class="threeColumns">
   {% for category in categoriesByName %}
     <div>
-      <h2 class="anchor" id="{{ category.name | slugize }}">{{ category.name }}</h2>
+      <h2 class="anchor" id="{{ category.name | slugify }}">{{ category.name }}</h2>
       {% for post in category.items limit:5 %}
         <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br /><br />
       {% endfor %}
-      <a href="{{ site.baseurl }}{{ site.category[category.name].permalink }}">&raquo; See all</a>
+      <a href="{{ site.baseurl }}/blog/category/{{ category.name | slugify }}">&raquo; See all</a>
     </div>
   {% endfor %}
 </div>

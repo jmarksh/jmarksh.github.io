@@ -7,7 +7,8 @@ layout: default
   {% for post in site.categories[page.category] %}
     <div>
         <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        {{ post.excerpt }} <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>...
+        {{ post.excerpt }}
+        <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>...
     </div>
   {% endfor %}
 </div>
