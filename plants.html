@@ -2,6 +2,7 @@
 layout: default
 title: Plants
 ---
+
   {% assign plant_families = site.data.plants | group_by: "family" | sort: "name" %}
   {% for f in plant_families %}
     <h2>{{ f.name }}</h2>
