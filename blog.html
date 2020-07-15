@@ -3,11 +3,12 @@ layout: default
 title: Blog
 permalink: /blog
 ---
-
+<h1>Blog Posts by Date</h1>
 <div class="threeColumns">
   {% for post in site.posts %}
     <div>
-        <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br /><br />
+        <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.excerpt }}</p>
     </div>
   {% endfor %}
 </div>
