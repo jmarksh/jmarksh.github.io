@@ -18,9 +18,10 @@ permalink: /blog/categories
   {% for category in categoriesByName %}
     <div>
       <h2 class="anchor" id="{{ category.name | slugize }}">{{ category.name }}</h2>
-      {% for post in category.items %}
+      {% for post in category.items limit:5 %}
         <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br /><br />
       {% endfor %}
+      <a href="{{ site.baseurl }}{{ site.categories[category.name].permalink }}">&raquo; See all</a>
     </div>
   {% endfor %}
 </div>
