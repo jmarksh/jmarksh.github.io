@@ -17,7 +17,7 @@ baseurl: joshuahanna.com
 
 collections:
   posts:
-    permalink: /:categories/:title/
+    permalink: /:year/:month/:day/:title/
 
 defaults:
   - scope:
