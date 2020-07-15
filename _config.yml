@@ -13,11 +13,9 @@ selfie: /assets/img/profile.jpg
 # Your email address
 email: jmarkh10@gmail.com
 
-baseurl: joshuahanna.com
+baseurl: https://joshuahanna.com
 
-collections:
-  posts:
-    permalink: /:year/:month/:day/:title/
+permalink: /:categories/:title/
 
 defaults:
   - scope:
