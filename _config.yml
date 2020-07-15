@@ -1,26 +1,26 @@
-# Name of website
+# Basics
 title: Joshua Hanna
-
-# Short description of website
 description:
-
-# Your name
 author: Joshua Hanna
-
-# Your profile image (like Facebook)
 selfie: /assets/img/profile.jpg
-
-# Your email address
 email: jmarkh10@gmail.com
 
 baseurl: https://joshuahanna.com
 
 permalink: /:categories/:title/
 
+collections:
+  category:
+    output: true
+    permalink: /blog/category/:name
+
 defaults:
   - scope:
       path: "assets/img"
     values:
       image: true
-
-theme: jekyll-theme-minimal
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
