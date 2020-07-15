@@ -3,4 +3,5 @@ layout: default
 title: Categories
 ---
 
-{{ site.categories }}
+{% assign cats = site.categories | group_by: "categories" | sort: "size" %}
+{{ cats }}
