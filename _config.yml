@@ -17,7 +17,7 @@ baseurl: https://joshuahanna.com
 
 collections:
   posts:
-    permalink: pretty
+    permalink: /:categories/:title
 
 defaults:
   - scope:
