@@ -3,4 +3,5 @@ layout: default
 ---
 
 <h2>{{ page.title }}</h2>
-<p>{{ content }}</p>
+<span class="attribution">Post by {% if page.author %}{{ page.author }}{% else %}unknown{% endif %}, {% if page.category %}filed under <a href="{{ site.baseurl }}/blog/category/{{ page.category }}">{{ page.category }}{% else %}uncategorized{% endif %}, {% if page.tags %}and tagged as {% if page.tags.size > 2 %}{% for tag in page.tags %}{% if forloop.last == true %}and {{ tag }}.{% else %}{{ tag }}, {% endif %}{% endfor %}{% else %}{% if page.tags.size == 2 %}{{ page.tags[0] }} and {{ page.tags[1] }}.{% else %}{% if page.tags.size == 1 %}{{ page.tags }}.{% endif %}{% endif %}{% endif %}{% else %}untagged.{% endif %}</span>
+{{ content }}
