@@ -15,9 +15,9 @@ permalink: /blog/categories
 <hr />
 
 <div class="threeColumns">
-  {% for category in site.categories %}
+  {% for category in categoriesByName %}
     <div>
-      <h2 class="anchor" id="{{ category.name | slugize }}">{{ categoryName }}</h2>
+      <h2 class="anchor" id="{{ category.name | slugize }}">{{ category.name }}</h2>
       {% for post in category.items %}
         <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br /><br />
       {% endfor %}
