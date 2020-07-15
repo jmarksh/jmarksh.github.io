@@ -1,0 +1,16 @@
+---
+layout: default
+permalink: /categories/
+title: Categories
+---
+
+<h1>Archive by Category</h1>
+{% assign cats = site.categories | group_by: "categories" | sort: "name" %}
+{% for cat in cats %}
+  <h2>{{ cat.name }}</h2>
+  <ul>
+    {% for post in cat.items %}
+      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
