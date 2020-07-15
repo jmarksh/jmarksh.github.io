@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Making a Jekyll Site
-category: Coding
+category: First
 tags: Jekyll HTML CSS
 author: Josh
 ---

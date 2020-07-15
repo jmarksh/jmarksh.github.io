@@ -3,5 +3,5 @@ layout: default
 title: Categories
 ---
 
-{% assign cats = site.categories | group_by: "categories" | sort: "size" %}
+{% assign cats = site.categories | sort %}
 {{ cats }}
