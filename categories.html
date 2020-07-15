@@ -11,7 +11,7 @@ title: Categories
 
 {% for category in site.categories %}
   {% capture categoryName %}{{ category | first}}{% endcapture %}
-  <h1 id="anchor {{ categoryName | slugize }}">{{ categoryName }}</h1>
+  <h1 class="anchor" id="{{ categoryName | slugize }}">{{ categoryName }}</h1>
   <ul>
     {% for post in site.categories[categoryName] %}
       <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
