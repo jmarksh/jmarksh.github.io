@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Categories
+title: Blog Categories
 permalink: /blog/categories
 ---
 
-<h1>Blog Archive by Categories</h1>
+<h1>{{ page.title }}</h1>
 <ul>
   {% for category in site.categories %}
     {% capture categoryName %}{{ category | first}}{% endcapture %}
@@ -12,13 +12,19 @@ permalink: /blog/categories
   {% endfor %}
 </ul>
 
-<div class="deck">
+<div class="threeColumns">
   {% for category in site.categories %}
     {% capture categoryName %}{{ category | first}}{% endcapture %}
-    <div class="card">
+    <div>
       <h2 class="anchor" id="{{ categoryName | slugize }}">{{ categoryName }}</h2>
       {% for post in site.categories[categoryName] %}
-        <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br />
+        <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br /><br />
       {% endfor %}
     </div>
   {% endfor %}
+</div>
+
+{% assign categoriesBySize = site.posts | group_by: "category" | sort: "size" %}
+{% for cat in categoriesBySize limit:5 %}
+  <h1>{{ cat.name }} <span class="small">{{ cat.size }} Posts</span></h1>
+{% endfor %}

@@ -22,10 +22,10 @@ title: Home
 <div class="threeColumns">
 	<div>
 		<h2>Blog Posts</h2>
-		<a href="#">Archive</a><br />
 		{% for post in site.posts limit:5 %}
-			<span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ post.url }}">{{ post.title }}</a><br />
+			<span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ post.url }}">{{ post.title }}</a><br /><br />
 		{% endfor %}
+		<a href="#">Archive</a>
 	</div>
 	<div>
 		<h2>Categories</h2>
