@@ -31,7 +31,7 @@ title: Home
 	<div>
 		<h2>Categories</h2>
 		<a href="#">All Categories</a>
-		{% assign cats = site.categories | group_by: "category" | sort: "size" %}
+		{% assign cats = site.categories | group_by: "categories" | sort: "size" %}
 		{% for cat in cats limit:5 %}
 			<br /><span class="smaller">{{ cat.size }} Posts</span><br />
 			<a href="#">{{ cat.name }}</a><br />
