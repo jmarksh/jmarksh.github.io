@@ -1,7 +1,10 @@
 ---
 layout: default
 title: Categories
+permalink: /blog/categories
 ---
+
+<h1>Blog Archive by Categories</h1>
 <ul>
   {% for category in site.categories %}
     {% capture categoryName %}{{ category | first}}{% endcapture %}
@@ -11,7 +14,7 @@ title: Categories
 
 {% for category in site.categories %}
   {% capture categoryName %}{{ category | first}}{% endcapture %}
-  <h1 class="anchor" id="{{ categoryName | slugize }}">{{ categoryName }}</h1>
+  <h2 class="anchor" id="{{ categoryName | slugize }}">{{ categoryName }}</h2>
   <ul>
     {% for post in site.categories[categoryName] %}
       <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
