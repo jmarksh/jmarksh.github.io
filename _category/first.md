@@ -1,3 +1,3 @@
 ---
-category: first
+category: First
 ---
