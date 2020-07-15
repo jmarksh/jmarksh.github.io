@@ -12,12 +12,13 @@ permalink: /blog/categories
   {% endfor %}
 </ul>
 
-{% for category in site.categories %}
-  {% capture categoryName %}{{ category | first}}{% endcapture %}
-  <h2 class="anchor" id="{{ categoryName | slugize }}">{{ categoryName }}</h2>
-  <ul>
-    {% for post in site.categories[categoryName] %}
-      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+<div class="deck">
+  {% for category in site.categories %}
+    {% capture categoryName %}{{ category | first}}{% endcapture %}
+    <div class="card">
+      <h2 class="anchor" id="{{ categoryName | slugize }}">{{ categoryName }}</h2>
+      {% for post in site.categories[categoryName] %}
+        <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br />
+      {% endfor %}
+    </div>
+  {% endfor %}
