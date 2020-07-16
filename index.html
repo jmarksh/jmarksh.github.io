@@ -37,6 +37,16 @@ title: Home
 	</div>
 	<div>
 		<h2>Tags</h2>
+    {% capture tags %}
+      {% for tag in site.tags %}
+        {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+      {% endfor %}
+    {% endcapture %}
+    {% assign tagsBySize = tags | split: " " | sort | reverse %}
+      {% for tag in tagsBySize limit:5 %}
+        {% assign tagArray = tag | split: "#" %}
+        <span class="smaller">{{ tagArray[2] }} Posts</span><br /><a href="{{ site.baseurl }}/blog/tag/{{ tagArray[1] | slugify }}">{{ tagArray[1] }}</a><br /><br />
+      {% endfor %}
     <a href="#">&raquo; All Tags</a>
 	</div>
 </div>
