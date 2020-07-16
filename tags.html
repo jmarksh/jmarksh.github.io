@@ -5,4 +5,5 @@ permalink: /blog/tags
 ---
 
 <p>{{ site.tags }}</p>
-<p>{% assign groupedByTags = site.posts | group_by:"tags" }}</p>
+{% assign groupedByTags = site.posts | group_by:"tags" }}
+<p>{{ groupedByTags }}</p>
