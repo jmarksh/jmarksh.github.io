@@ -33,20 +33,20 @@ title: Home
     {% for category in categoriesBySize limit:5 %}
       <span class="smaller">{{ category.size }} Posts</span><br /><a href="{{ site.baseurl }}/blog/category/{{ category.name | slugify }}">{{ category.name }}</a><br /><br />
     {% endfor %}
-		<a href="{% link categories.html %}">&raquo; All Categories</a>
+		<a href="{% link categories.html %}">&raquo; See All Categories</a>
 	</div>
 	<div>
 		<h2>Tags</h2>
     {% capture tags %}
       {% for tag in site.tags %}
-        {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+        {{ tag[1].size | minus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
       {% endfor %}
     {% endcapture %}
-    {% assign tagsBySize = tags | split: " " | sort | reverse %}
+    {% assign tagsBySize = tags | split: " " | sort %}
       {% for tag in tagsBySize limit:5 %}
         {% assign tagArray = tag | split: "#" %}
         <span class="smaller">{{ tagArray[2] }} Posts</span><br /><a href="{{ site.baseurl }}/blog/tag/{{ tagArray[1] | slugify }}">{{ tagArray[1] }}</a><br /><br />
       {% endfor %}
-    <a href="#">&raquo; All Tags</a>
+    <a href="{% link tags.html %}">&raquo; See All Tags</a>
 	</div>
 </div>
