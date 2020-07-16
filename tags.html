@@ -11,3 +11,17 @@ permalink: /blog/tags
     <li><a href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a> <span class="smaller">{{ tag[1].size }} Posts</span></li>
   {% endfor %}
 </ul>
+
+<hr />
+
+<div class="threeColumns">
+  {% for tag in tagsByName %}
+    <div>
+      <h2 class="anchor" id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+      {% for post in category[1] limit:5 %}
+        <span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br /><br />
+      {% endfor %}
+<!--      <a href="{{ site.baseurl }}/blog/category/{{ tag[0] | slugify }}">&raquo; See all</a> -->
+    </div>
+  {% endfor %}
+</div>
