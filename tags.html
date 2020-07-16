@@ -4,8 +4,10 @@ title: Posts by Tags
 permalink: /blog/tags
 ---
 
+<p>{{ site.tags }}</p>
+
 <div id="1">
-  {% for tag in ste.tags %}
+  {% for tag in site.tags %}
     <h2>{{ tag[0] }}</h2>
   {% endfor %}
 </div>
