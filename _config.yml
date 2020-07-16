@@ -13,6 +13,9 @@ collections:
   category:
     output: true
     permalink: /blog/category/:name
+  tag:
+    output: true
+    permalink: /blog/tag/:name
 
 defaults:
   - scope:
