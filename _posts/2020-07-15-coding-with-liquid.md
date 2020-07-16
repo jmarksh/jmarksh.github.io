@@ -2,9 +2,7 @@
 layout: post
 title: Designing with Liquid
 category: Coding
-tags:
-  - "Jekyll"
-  - "Liquid"
+tags: Jekyll Liquid
 author: Josh
 ---
 
