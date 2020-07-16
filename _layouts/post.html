@@ -2,22 +2,50 @@
 layout: default
 ---
 
-<h2>{{ page.title }}</h2>
+<h1>{{ page.title }}</h1>
 <div class="smaller attribution">Post by {% if page.author %}{{ page.author }}{% else %}unknown{% endif %} on {{ page.date | date_to_string }}, {% if page.category %}filed under <a href="{{ site.baseurl }}/blog/category/{{ page.category }}">{{ page.category }}</a>{% else %}uncategorized{% endif %}, {% if page.tags %}and tagged as {% if page.tags.size > 2 %}{% for tag in page.tags %}{% if forloop.last == true %}and <a href="#">{{ tag }}</a>.{% else %}<a href="#">{{ tag }}</a>, {% endif %}{% endfor %}{% else %}{% if page.tags.size == 2 %}<a href="#">{{ page.tags[0] }}</a> and <a href="#">{{ page.tags[1] }}</a>.{% else %}{% if page.tags.size == 1 %}<a href="#">{{ page.tags }}</a>.{% endif %}{% endif %}{% endif %}{% else %}untagged.{% endif %}</div>
 
 {{ content }}
 
-<hr />
-
-<h4>Related Posts</h4>
 <div class="threeColumns">
-  {% assign relatedPosts = site.categories[page.category] | where_exp:"post","post.url != page.url" | sample:3 %}
-  {% for post in relatedPosts %}
-    <div>
-        <span class="smaller">{{ post.date | date_to_string }}</span>
-        <h3>{{ post.title }}</h3>
-        {{ post.excerpt }}
-        <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>...
-    </div>
-  {% endfor %}
+  <div class="previous">
+    <h3>Previous Post</h3>
+    <a href="{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
+  </div>
+  <div class="next">
+    <h3>Next Post</h3>
+    <a href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+  </div>
 </div>
+
+{% if site.categories[page.category].size > 1 %}
+  <hr />
+  <h2>Related Posts</h2>
+  <div class="threeColumns">
+    {% assign relatedPosts = site.categories[page.category] | where_exp:"post","post.url != page.url" | sample:3 %}
+    {% for post in relatedPosts %}
+      <div>
+          <span class="smaller">{{ post.date | date_to_string }}</span>
+          <h3>{{ post.title }}</h3>
+          {{ post.excerpt }}
+          <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>...
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% if site.categories.size > 1 %}
+  <hr />
+  <h2>Something Different</h2>
+  <div class="threeColumns">
+    {% assign differentPosts = site.posts | where_exp:"post","post.category != page.category" | sample:3 %}
+    {% for post in differentPosts %}
+      <div>
+          <span class="smaller">{{ post.date | date_to_string }}</span>
+          <h3>{{ post.title }}</h3>
+          {{ post.excerpt }}
+          <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>...
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
