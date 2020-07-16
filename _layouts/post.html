@@ -7,15 +7,20 @@ layout: default
 
 {{ content }}
 
+<hr />
 <div class="threeColumns">
-  <div class="previous">
-    <h3>Previous Post</h3>
-    <a href="{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
-  </div>
-  <div class="next">
-    <h3>Next Post</h3>
-    <a href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
-  </div>
+  {% if page.next %}
+    <div class="centerText">
+      <h3>Newer Post</h3>
+      <a href="{{ page.next.url }}">&laquo; {{ page.next.title }}</a>
+    </div>
+  {% endif %}
+  {% if page.previous %}
+    <div class="centerText">
+      <h3>Older Post</h3>
+      <a href="{{ page.previous.url }}">{{ page.previous.title }} &raquo;</a>
+    </div>
+  {% endif %}
 </div>
 
 {% if site.categories[page.category].size > 1 %}
