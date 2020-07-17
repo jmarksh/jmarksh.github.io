@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Flexing Colors
 category: Coding
 tags: Jekyll HTML CSS

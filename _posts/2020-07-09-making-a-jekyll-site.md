@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Making a Jekyll Site
 category: Coding
 tags: Jekyll HTML CSS

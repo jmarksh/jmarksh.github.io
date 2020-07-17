@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Do Not Repeat Yourself
 category: Coding
 tags: Jekyll HTML CSS

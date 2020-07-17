@@ -19,6 +19,11 @@ collections:
 
 defaults:
   - scope:
+      path: ""
+      type: post
+    values:
+      layout: "post"
+  - scope:
       path: "assets/img"
     values:
       image: true

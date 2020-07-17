@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Designing with Liquid
 category: Coding
 tags: Jekyll Liquid

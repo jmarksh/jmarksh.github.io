@@ -39,14 +39,16 @@ title: Home
 		<h2>Tags</h2>
     {% capture tags %}
       {% for tag in site.tags %}
-        {{ tag[1].size | minus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+        {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
       {% endfor %}
     {% endcapture %}
     {% assign tagsBySize = tags | split: " " | sort %}
-      {% for tag in tagsBySize limit:5 %}
-        {% assign tagArray = tag | split: "#" %}
-        <span class="smaller">{{ tagArray[2] }} Posts</span><br /><a href="{{ site.baseurl }}/blog/tag/{{ tagArray[1] | slugify }}">{{ tagArray[1] }}</a><br /><br />
-      {% endfor %}
+    {% for tag in tagsBySize limit:5 %}
+      {% assign tagArray = tag | split: "#" %}
+      <span class="smaller">{{ tagArray[2] }} Posts</span><br /><a href="{{ site.baseurl }}/blog/tag/{{ tagArray[1] | slugify }}">{{ tagArray[1] }}</a><br /><br />
+    {% endfor %}
     <a href="{% link tags.html %}">&raquo; See All Tags</a>
 	</div>
 </div>
+
+{% comment %} I got this method for sorting site.tags by post cost from https://stackoverflow.com/questions/24700749/how-do-you-sort-site-tags-by-post-count-in-jekyll#answer-24744306. An edge-case issue came up: what happens when two tags have the same size? with the "reverse" filter on the forloop (or after sort on the assign, as I prefer), they will reverse their alphabetical order. The solution was in the comment from @Mincong Huang who suggested using minus: 1000 instead. This means you don't have to reverse the sort (because they will already be in reverse order) and alphbetical. {% endcomment %}
