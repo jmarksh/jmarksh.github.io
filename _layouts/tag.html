@@ -8,9 +8,10 @@ layout: default
     {% include post-preview.html item=post %}
   {% endfor %}
 </div>
+
+<h2>Choose Another Tag</h2>
 <div class="threeColumns">
-  <h2>Choose Another Tag</h2>
-  <div>
+  <div class="centerText">
     {% capture tags %}
       {% for tag in site.tags %}
         {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
