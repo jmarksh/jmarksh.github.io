@@ -40,7 +40,6 @@ title: Home
 	</div>
 	<div>
 		<h3>Tags</h3>
-    {% assign max = "" %}
     {% capture tags %}
       {% for tag in site.tags %}
         {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
@@ -49,18 +48,8 @@ title: Home
     {% assign tagsBySize = tags | split: " " | sort %}
     {% for tag in tagsBySize limit:5 %}
       {% assign tagArray = tag | split: "#" %}
-      {% if max == "" %}
-        {% assign max = tagArray[2] %}
-      {% endif %}
       <span class="smaller">{{ tagArray[2] }} Posts</span><br /><a href="{{ site.baseurl }}/blog/tags/{{ tagArray[1] | slugify }}">{{ tagArray[1] }}</a><br /><br />
     {% endfor %}
     <a href="{% link tags.html %}">&raquo; See All Tags</a>
-    {% assign max = max | minus: 1 %}
-    {% assign rate = 120 | divided_by: max %}
-    {% assign n = site.tags.size %}
-    {% assign shuffledTags = site.tags | sample: 2 %}
-    {% for tag in shuffledTags %}
-      <span style="font-size: {{ tag[1].size | minus: 1 | times: rate | plus: 80 }}%">{{ tag[0] }}</span>
-    {% endfor %}
 	</div>
 </div>

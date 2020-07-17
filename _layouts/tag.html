@@ -8,3 +8,20 @@ layout: default
     {% include post-preview.html item=post %}
   {% endfor %}
 </div>
+<div class="threeColumns">
+  <h2>Choose Another Tag</h2>
+  <div>
+    {% capture tags %}
+      {% for tag in site.tags %}
+        {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
+      {% endfor %}
+    {% endcapture %}
+    {% assign tagsBySize = tags | split: " " | sort %}
+    {% assign biggestTag = tagsBySize[0] | split: "#" %}
+    {% assign max = biggestTag[2] | minus: 1 %}
+    {% assign rate = 120 | divided_by: max %}
+    {% for tag in site.tags %}
+      <a href="{{ site.baseurl }}/blog/tags/{{ tag[0] }}" style="font-size: {{ tag[1].size | minus: 1 | times: rate | plus: 80 }}%">{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+</div>
