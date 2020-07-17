@@ -57,7 +57,8 @@ title: Home
     <a href="{% link tags.html %}">&raquo; See All Tags</a>
     {% assign max = max | minus: 1 %}
     {% assign rate = 120 | divided_by: max %}
-    {% assign shuffledTags = site.tags | sample: site.tags.size %}
+    {% assign n = site.tags.size %}
+    {% assign shuffledTags = site.tags | sample: n %}
     {% for tag in shuffledTags %}
       <span style="font-size: {{ tag[1].size | minus: 1 | times: rate | plus: 80 }}%">{{ tag[0] }}</span>
     {% endfor %}
