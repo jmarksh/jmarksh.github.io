@@ -20,7 +20,8 @@ title: Home
 <hr />
 
 <h2>Blog</h2>
-{% include post-preview.html item=site.posts[1] %}
+{% assign featured = site.posts[1] %}
+{% include post-preview.html item=featured %}
 <div class="threeColumns">
 	<div>
 		<h3>Recent Posts</h3>
