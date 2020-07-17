@@ -34,7 +34,7 @@ layout: default
       <div>
           <span class="smaller">{{ post.date | date_to_string }}</span>
           <h3><a href="{{ site.basurl }}{{ post.url }}">{{ post.title }}</a></h3>
-          <div class="smaller attribution">{% if post.tags %}Tagged as {% if post.tags.size > 2 %}{% for tag in post.tags %}{% if forloop.last == true %}and <a href="#">{{ tag }}</a>.{% else %}<a href="#">{{ tag }}</a>, {% endif %}{% endfor %}{% else %}{% if post.tags.size == 2 %}<a href="#">{{ post.tags[0] }}</a> and <a href="#">{{ post.tags[1] }}</a>.{% else %}{% if post.tags.size == 1 %}<a href="#">{{ post.tags }}</a>.{% endif %}{% endif %}{% endif %}{% endif %}</div>
+          <div class="smaller attribution">{% if post.category %}Filed under <a href="{{ site.baseurl }}/blog/category/{{ post.category | slugify }}">{{ post.category }}</a>{% else %}Uncategorized{% endif %} and {% if post.tags %}tagged as {% if post.tags.size > 2 %}{% for tag in post.tags %}{% if forloop.last == true %}and <a href="#">{{ tag }}</a>{% else %}<a href="#">{{ tag }}</a>, {% endif %}{% endfor %}{% else %}{% if post.tags.size == 2 %}<a href="#">{{ post.tags[0] }}</a> and <a href="#">{{ post.tags[1] }}</a>{% else %}{% if post.tags.size == 1 %}<a href="#">{{ post.tags }}</a>{% endif %}{% endif %}{% endif %}{% else %}untagged{% endif %}.</div>
           {{ post.excerpt }}
           <a href="{{ site.baseurl }}{{ post.url }}" class="button button-primary">Read more</a>
       </div>

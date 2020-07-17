@@ -72,13 +72,13 @@ It was very important, though, in the last section that you only had one categor
 
 You would not be getting a list of posts with neatly separated tags, you'd be getting posts separated by all the *sets* of tags you used. It works as intended, it's just annoying. And you can't build your own complex array because, as discussed, Liquid can't do that.
 
-That's okay, though, really. The language wasn't *designed* to do this, so the fact that it can't shouldn't be shocking, even if it does make you waste a lot of time, late late into the night, coding and re-coding *BECAUSE IT JUST SHOULD WORK!* Because of that, people have created plugins to accomplish the task. One of which, [jekyll-archives](https://jekyllrb.com/docs/plugins/your-first-plugin/) is right at the top of the page about plugins.
+That's okay, though, really. The language wasn't *designed* to do this, so the fact that it can't shouldn't be shocking, even if it does make you waste a lot of time, late late into the night, coding and re-coding *BECAUSE IT JUST SHOULD WORK!* Because of that, people have created plugins to accomplish the task. One of which, [jekyll-archives](https://jekyllrb.com/docs/plugins/your-first-plugin/), is right at the top of the page about plugins.
 
 But you don't need a plugin (and I hate needlessly complicating the internet).
 
 ## The Solution
 
-There is a way to solve this without a plugin. It was posted to [Stack Overflow](https://stackoverflow.com/questions/24700749/how-do-you-sort-site-tags-by-post-count-in-jekyll#answer-24744306) by [Christian Specht](https://stackoverflow.com/users/6884/christian-specht) in response to someone asking about a plugin to solve this same problem. It's been described as "slick" (by someone else) and "hacky" (by me), but it works without a ton of code. A commenter, [Mincong Huang](https://stackoverflow.com/users/4381330/mincong-huang) even made it better with a seemingly small note. First, the code, modified to work on this site:
+There is a way to solve this without a plugin. It was [posted to Stack Overflow](https://stackoverflow.com/questions/24700749/how-do-you-sort-site-tags-by-post-count-in-jekyll#answer-24744306) by [Christian Specht](https://stackoverflow.com/users/6884/christian-specht) in response to someone asking about a plugin to solve this same problem. It's been described as "slick" (by someone else) and "hacky" (by me), but it works without a ton of code. A commenter, [Mincong Huang](https://stackoverflow.com/users/4381330/mincong-huang), made it even better with a seemingly small note. First, the code, modified to work on this site:
 
 ```
 {% raw %}{% capture tags %}
