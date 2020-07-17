@@ -19,9 +19,11 @@ title: Home
 
 <hr />
 
+<h2>Blog</h2>
+<p>I take requests! Curious about how I put my site together? Let me know, and I'll make a post about it just for you!</p>
 <div class="threeColumns">
 	<div>
-		<h2>Blog Posts</h2>
+		<h2>Recent Posts</h2>
 		{% for post in site.posts limit:5 %}
 			<span class="smaller">{{ post.date | date_to_string }}</span><br /><a href="{{ post.url }}">{{ post.title }}</a><br /><br />
 		{% endfor %}
