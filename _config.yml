@@ -7,10 +7,9 @@ email: jmarkh10@gmail.com
 
 baseurl: https://joshuahanna.com
 
+permalink: /:categories/:title/
+
 collections:
-  post:
-    output: true
-    permalink: /blog/:categories/:title/
   category:
     output: true
     permalink: /blog/category/:name
