@@ -20,6 +20,7 @@ Other people who use Jekyll have wanted multiple categories or only use tags ins
 With a few quick lines of code, you can pull groups of posts out to display that are connected by category or tag, which, obviously you should be able to. It's one of the first things people do when they start a blog, and [they even tell you exactly how to do this on the Jekyll website](https://jekyllrb.com/docs/posts/#tags-and-categories):
 
 ```
+{% raw %}
 {% for tag in site.tags %}
   <h3>{{ tag[0] }}</h3>
   <ul>
@@ -28,12 +29,13 @@ With a few quick lines of code, you can pull groups of posts out to display that
     {% endfor %}
   </ul>
 {% endfor %}
+{% endraw %}
 ```
 
 The same deal works for categories if you just replace `tags` with `categories` above. That's because the built-in functionality of Jekyll creates a complex array out of the `site.tags` or `site.categories` variable. That is, each element in the array is an array where the first element is the tag (or category) name and the second is an array of the posts with that tag. Mathematically (not actually) this looks like:
 
 ```
-{ {"Bananas", {#, #, #} }, {"Zuchinis", {#, #, #, #}} }
+{ {"Bananas", {#, #, #} }, {"Zuchinis", {#, #, #, #} } }
 ```
 
 You have four posts about zuchinis and only three about bananas. It's okay, we overplanted zuchinis, too.
@@ -51,10 +53,12 @@ We literally just created a complex array that had all of the posts in an array 
 Luckily, you've limited yourself to only one category per post (very important), so there's an easy way around this:
 
 ```
+{% raw %}
 {% assign categoriesBySize = site.posts | group_by: "category" | sort: "size" | reverse %}
 {% for category in categoriesBySize limit:5 %}
   <span class="smaller">{{ category.size }} Posts</span><br /><a href="{{ site.baseurl }}/blog/category/{{ category.name | slugify }}">{{ category.name }}</a><br /><br />
 {% endfor %}
+{% endraw %}
 ```
 
 Using another nifty filter that comes built in (`group_by`), you can create a complex array of your posts, categorized by their category **and** it even gives you the size of the post array *as an element* in the complex array. Notably, it also associates each position in the array with a name, so you can refer to it. Again, mathematically (not actually), this looks like:
@@ -84,6 +88,7 @@ But you don't need a plugin.
 There is a way to solve this without a plugin. It was posted to [Stack Overflow](https://stackoverflow.com/questions/24700749/how-do-you-sort-site-tags-by-post-count-in-jekyll#answer-24744306) by [Christian Specht](https://stackoverflow.com/users/6884/christian-specht) in response to someone asking about a plugin to solve this same problem. It's been described as "slick" (by someone else) and "hacky" (by me), but it works without a ton of code. A commenter, [Mincong Huang](https://stackoverflow.com/users/4381330/mincong-huang) even made it better with a seemingly small note. The code, modified to work on my site:
 
 ```
+{% raw %}
 {% capture tags %}
   {% for tag in site.tags %}
     {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
@@ -94,6 +99,7 @@ There is a way to solve this without a plugin. It was posted to [Stack Overflow]
   {% assign tagArray = tag | split: "#" %}
   <span class="smaller">{{ tagArray[2] }} Posts</span><br /><a href="{{ site.baseurl }}/blog/tag/{{ tagArray[1] | slugify }}">{{ tagArray[1] }}</a><br /><br />
 {% endfor %}
+{% endraw %}
 ```
 Essentially, you create a string that contains the number of posts in a tag formatted in a sortable way, the tag name, and the number of posts in a readable way. You sort while that is all one string, and then you break it into pieces to use the parts of the string as you need to.
 
