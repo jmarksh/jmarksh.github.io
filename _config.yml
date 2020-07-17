@@ -12,10 +12,10 @@ permalink: /:categories/:title/
 collections:
   category:
     output: true
-    permalink: /blog/category/:name
+    permalink: /blog/categories/:name
   tag:
     output: true
-    permalink: /blog/tag/:name
+    permalink: /blog/tags/:name
 
 defaults:
   - scope:
