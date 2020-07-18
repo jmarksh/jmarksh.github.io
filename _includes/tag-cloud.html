@@ -11,7 +11,7 @@
     {% assign max = biggestTag[2] | minus: 1 %}
     {% assign rate = 120 | divided_by: max %}
     {% assign site.tags.size = n %}
-    {% assign sortedTags = site.tags | sort %}
+    {% assign sortedTags = site.tags | sort | sample: n %}
     {% for tag in sortedTags %}
       <a href="{{ site.baseurl }}/blog/tags/{{ tag[0] | slugify }}" style="font-size: {{ tag[1].size | minus: 1 | times: rate | plus: 80 }}%">{{ tag[0] }}</a>
     {% endfor %}
