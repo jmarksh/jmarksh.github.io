@@ -1,17 +1,19 @@
 <h2>Tag Cloud</h2>
-<div class="tagCloud">
-  {% capture tags %}
-    {% for tag in site.tags %}
-      {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
+<div class="threeColumns">
+  <div class="tagCloud">
+    {% capture tags %}
+      {% for tag in site.tags %}
+        {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
+      {% endfor %}
+    {% endcapture %}
+    {% assign tagsBySize = tags | split: " " | sort %}
+    {% assign biggestTag = tagsBySize[0] | split: "#" %}
+    {% assign max = biggestTag[2] | minus: 1 %}
+    {% assign rate = 120 | divided_by: max %}
+    {% assign site.tags.size = n %}
+    {% assign sortedTags = site.tags | sort %}
+    {% for tag in sortedTags %}
+      <a href="{{ site.baseurl }}/blog/tags/{{ tag[0] | slugify }}" style="font-size: {{ tag[1].size | minus: 1 | times: rate | plus: 80 }}%">{{ tag[0] }}</a>
     {% endfor %}
-  {% endcapture %}
-  {% assign tagsBySize = tags | split: " " | sort %}
-  {% assign biggestTag = tagsBySize[0] | split: "#" %}
-  {% assign max = biggestTag[2] | minus: 1 %}
-  {% assign rate = 120 | divided_by: max %}
-  {% assign site.tags.size = n %}
-  {% assign shuffledTags = site.tags | sample:n %}
-  {% for tag in shuffledTags %}
-    <a href="{{ site.baseurl }}/blog/tags/{{ tag[0] | slugify }}" style="font-size: {{ tag[1].size | minus: 1 | times: rate | plus: 80 }}%">{{ tag[0] }}</a>
-  {% endfor %}
+  </div>
 </div>
