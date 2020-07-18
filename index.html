@@ -53,3 +53,9 @@ title: Home
     <a href="{% link tags.html %}">&raquo; See All Tags</a>
 	</div>
 </div>
+
+{{ site.tags }}
+<hr />
+{{ site.tags | sort }}
+<hr />
+{{ site.tags | sample: 2}}
