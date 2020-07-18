@@ -56,6 +56,20 @@ title: Home
 
 {{ site.tags }}
 <hr />
+{{ site.tags.size }}
+<hr />
+{% assign n = site.tags | size %}
 {% assign sortedTags = site.tags | sort %}
 <hr />
 {{ sortedTags | sample: 2}}
+<hr />
+oogs
+<hr />
+{{ sortedTags | sample: 2 }}
+<hr />
+skoog
+<hr />
+{% assign sampleTags = sortedTags | sample: 2 %}
+{% for tag in sampleTags %}
+{{ tag }}
+{% endfor %}
