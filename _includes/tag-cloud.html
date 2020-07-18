@@ -10,9 +10,14 @@
     {% assign biggestTag = tagsBySize[0] | split: "#" %}
     {% assign max = biggestTag[2] | minus: 1 %}
     {% assign rate = 120 | divided_by: max %}
-    {% assign site.tags.size = n %}
+    {% assign tagBox = "" | split: "," %}
+    {% for tag in site.tags %}
+      {% assign tagBox = tagBox | join: "," | append: "," | append: tag[0] | split: "," %}
+    {% endfor %}
+    {% assign n = tagBox.size %}
+    {% assign tagBox = tagBox | sample: n %}
     {% assign sortedTags = site.tags | sort %}
-    {% for tag in sortedTags %}
+    {% for tag in tagBox %}
       <a href="{{ site.baseurl }}/blog/tags/{{ tag[0] | slugify }}" style="font-size: {{ tag[1].size | minus: 1 | times: rate | plus: 80 }}%">{{ tag[0] }}</a>
     {% endfor %}
   </div>
