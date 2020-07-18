@@ -56,6 +56,6 @@ title: Home
 
 {{ site.tags }}
 <hr />
-{{ site.tags | sort }}
+{% assign sortedTags = site.tags | sort %}
 <hr />
-{{ site.tags | sample: 2}}
+{{ sortedTags | sample: 2}}
