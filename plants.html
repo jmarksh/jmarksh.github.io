@@ -4,7 +4,7 @@ title: Plants
 ---
 <h1>Plants</h1>
 
-<p>Between my partner having a degree in landscape architecture and my own obsession with houseplants, we've developed quite a collection. Add in my obsession with data analysis, and you get this little catalog of plants. You can also follow us and out plants on Instagram [@theBoySprouts](https://www.instagram.com/theboysprouts/).</p>
+<p>Between my partner having a degree in landscape architecture and my own obsession with houseplants, we've developed quite a collection. Add in my obsession with data analysis, and you get this little catalog of plants. You can also follow us and out plants on Instagram <a href="https://www.instagram.com/theboysprouts/">@theBoySprouts</a>.</p>
 
 {% assign plantLocations = site.data.plants | group_by: "location" | sort: "name" %}
 <ul>
@@ -23,17 +23,17 @@ title: Plants
 <p>These are plants I haven't had the joy of owning yet, but for which I'm keeping my eye out for a good source. I wouldn't say they're particuarly expensive plants (at least not all of them); I just can't seem to find them in my area. Happy to trade with someone if something I have is on your wishlist!</p>
 {% assign plantFamilies = site.data.plants | group_by: "family" | sort: "name" %}
 {% for family in plantFamilies}
-  <h3>{{ f.name }}</h3>
+  <h3>{{ family.name }}</h3>
   <div class="deck">
     {% assign sortedByType = family.items | sort: "type" %}
     {% assign sortedByVariety = sortedByType | sort: "variety" %}
     {% assign sortedBySpecies = sortedByVariety | sort: "species" %}
     {% assign sortedByGenus = sortedBySpecies | sort: "genus" %}
-    {% for plant in sorted_by_genus %}
+    {% for plant in sortedByGenus %}
       <div class="card">
         <div class="cardContent">
-          <i>{{ p.genus }}{% if p.species %} {{ p.species }}{% else %} sp.{% endif %}</i>{% if p.variety %} '{{ p.variety }}'{% endif %}{% if p.type %} {{ p.type }}{% endif %}<br />
-          <a href="https://www.google.com/search?q={{ p.genus }}+{{ p.species }}">Search Google</a>
+          <i>{{ plant.genus }}{% if plant.species %} {{ plant.species }}{% else %} sp.{% endif %}</i>{% if plant.variety %} '{{ plant.variety }}'{% endif %}{% if plant.type %} {{ plant.type }}{% endif %}<br />
+          <a href="https://www.google.com/search?q={{ plant.genus }}+{{ plant.species }}">Search Google</a>
         </div>
       </div>
     {% endfor %}
