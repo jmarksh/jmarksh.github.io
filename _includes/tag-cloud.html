@@ -8,7 +8,6 @@
     {% endcapture %}
     {% assign tagsBySize = tags | split: " " | sort %}
     {% assign biggestTag = tagsBySize[0] | split: "#" %}
-    {% assign smallestTag = tagsBySize[0] | split: "#" %}
     {% assign max = biggestTag[2] | minus: 1 %}
     {% assign rate = 100 | divided_by: max %}
     {% assign site.tags.size = n %}
