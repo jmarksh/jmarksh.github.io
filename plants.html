@@ -2,22 +2,37 @@
 layout: default
 title: Plants
 ---
+<h1>Plants</h1>
 
-  {% assign plant_families = site.data.plants | group_by: "family" | sort: "name" %}
-  {% for f in plant_families %}
-    <h2>{{ f.name }}</h2>
-    <div class="deck">
-      {% assign sorted_by_type = f.items | sort: "type" %}
-      {% assign sorted_by_variety = sorted_by_type | sort: "variety" %}
-      {% assign sorted_by_species = sorted_by_variety | sort: "species" %}
-      {% assign sorted_by_genus = sorted_by_species | sort: "genus" %}
-        {% for p in sorted_by_genus %}
-          <div class="card">
-            <div class="cardContent">
-              <i>{{ p.genus }}{% if p.species %} {{ p.species }}{% else %} sp.{% endif %}</i>{% if p.variety %} '{{ p.variety }}'{% endif %}{% if p.type %} {{ p.type }}{% endif %}<br />
-              <a href="https://www.google.com/search?q={{ p.genus }}+{{ p.species }}">Search Google</a>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
+<p>Between my partner having a degree in landscape architecture and my own obsession with houseplants, we've developed quite a collection. Add in my obsession with data analysis, and you get this little catalog of plants. You can also follow us and out plants on Instagram [@theBoySprouts](https://www.instagram.com/theboysprouts/).</p>
+
+{% assign plantLocations = site.data.plants | group_by: "location" | sort: "name" %}
+<ul>
+  {% for location in plantLocations %}
+    <li><a href="#{{ location.name | slugify }}">{{ location.name }} ({{ location.size }})</a></li>
   {% endfor %}
+</ul>
+
+{% assign wantedPlants = plantLocations | where:"location","Want" %}
+<h2 id="#{{ wantedPlants.name | slugify }}">{{ wantedPlants.name }}</h2>
+<p>These are plants I haven't had the joy of owning yet, but for which I'm keeping my eye out for a good source. I wouldn't say they're particuarly expensive plants (at least not all of them); I just can't seem to find them in my area. Happy to trade with someone if something I have is on your wishlist!</p>
+
+
+{% assign plant_families = site.data.plants | group_by: "family" | sort: "name" %}
+{% for f in plant_families %}
+  <h2>{{ f.name }}</h2>
+  <div class="deck">
+    {% assign sorted_by_type = f.items | sort: "type" %}
+    {% assign sorted_by_variety = sorted_by_type | sort: "variety" %}
+    {% assign sorted_by_species = sorted_by_variety | sort: "species" %}
+    {% assign sorted_by_genus = sorted_by_species | sort: "genus" %}
+      {% for p in sorted_by_genus %}
+        <div class="card">
+          <div class="cardContent">
+            <i>{{ p.genus }}{% if p.species %} {{ p.species }}{% else %} sp.{% endif %}</i>{% if p.variety %} '{{ p.variety }}'{% endif %}{% if p.type %} {{ p.type }}{% endif %}<br />
+            <a href="https://www.google.com/search?q={{ p.genus }}+{{ p.species }}">Search Google</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+{% endfor %}
