@@ -53,14 +53,3 @@ title: Home
     <a href="{% link tags.html %}">&raquo; See All Tags</a>
 	</div>
 </div>
-
-{{ site.tags }}
-<hr />
-{{ site.tags.size }}
-<hr />
-{% assign n = site.tags | size %}
-{% assign sortedTags = site.tags | sort %}
-{% assign sampleTags = sortedTags | sample: n %}
-{% for tag in sampleTags %}
-{{ tag[0] }}
-{% endfor %}
