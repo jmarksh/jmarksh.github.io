@@ -60,7 +60,7 @@ title: Home
 <hr />
 {% assign n = site.tags | size %}
 {% assign sortedTags = site.tags | sort %}
-{% assign sampleTags = sortedTags | sample: 2 %}
+{% assign sampleTags = sortedTags | sample: n %}
 {% for tag in sampleTags %}
 {{ tag[0] }}
 {% endfor %}
