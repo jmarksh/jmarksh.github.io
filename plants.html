@@ -14,7 +14,7 @@ title: Plants
 </ul>
 
 {% assign want = plantLocations | where:"location","Want" %}
-{% assign wantedPlants = want[0].items | sort: "type" %}
+{% assign wantedPlants = want.items | sort: "type" %}
 {% assign wantedPlants = wantedPlants | sort: "variety" %}
 {% assign wantedPlants = wantedPlants | sort: "species" %}
 {% assign wantedPlants = wantedPlants | sort: "genus" %}
