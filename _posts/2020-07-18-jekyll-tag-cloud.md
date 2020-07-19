@@ -27,13 +27,13 @@ In this example, if I had 4 posts tagged with "bricks", I'd get the word "bricks
 
 He has a good goal: "count [a category's] usage. Divide that by the total number of posts". This gives the percentage of posts with a particular category, between 0 (exclusive) and 100 (inclusive). This is particularly easy to see when categories are limited to one per post. He then uses that percentage as the font-size, adding 70 to it that to help out. Having a font-size between 70% and 170% is reasonable.
 
-This actually works in principal, only failing (in my opinion) (3). I actually don't mind that the lower bound isn't used because it could be so close to it that it doesn't matter. My issue is that in most use cases, the sizes will never be close to 70% or 100%, crowding everything around the middle, unintentionally.
+This actually works in principal, only failing (in my opinion) (3). I actually don't mind that the lower bound isn't used because it could be so close to it that it doesn't matter. My issue is that in most use cases, the sizes will never be close to 70% or 170%, crowding everything around the middle, unintentionally.
 
 I get the feeling that he never implemented this code, though. For one, he makes mention of what his blog "would probably" look like if he used it. And two... It's not what the code he provided does. `site.categories.size`, the denominator in his formula, is not the number of posts on the website; it's the number of categories used on the website. Imagine a scenario where you wrote a post about "cement" before you got into "bricks" and wrote a post about that. You have 2 posts and 2 categories. With his code, each category will display at 120% font-size (1 \* 100 / 2 + 70 = 120), which is reasonable. Imagine you got really into bricks, though, and kept writing until you got to 300 posts about them. Now you have 301 posts and 2 categories. The category "bricks" is now going to display at a whopping 15,070% (300 \* 100 / 2 + 70 = 15,070). (Oh gosh, that extra 70 really got me.)
 
 So the "fix" for his code is to use `site.posts.size` instead. He doesn't have comments or I'm sure someone would have told him this since 14 May 2013. Also, he seems like a solid guy, and I know the order of operations doesn't matter between multiplication and division, but I still hate that he multiplies by 100 *before* dividing by the total.
 
-### C Yet Another SysAdmin trying to do his job... Jo Vandeginste
+### C. Yet Another SysAdmin trying to do his job... Jo Vandeginste
 
 Is this is an improvement? He seems very confident that it is. He pointed this out on his post (and a comment on A, just for good measure).
 
