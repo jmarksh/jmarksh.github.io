@@ -1,4 +1,4 @@
-{% if site.tags != 0 %}
+{% if site.tags.size != 0 %}
   {% capture tags %}
     {% for tag in site.tags %}
       {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
