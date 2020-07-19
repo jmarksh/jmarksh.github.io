@@ -4,7 +4,7 @@ title: Blog
 permalink: /blog
 ---
 <h1>Posts by Date</h1>
-{% assign postsByMonth = site.posts | group_by_exp: "post", "date: '%B'" %}
+{% assign postsByMonth = site.posts | group_by_exp: "post", "post.date | date: '%B'" %}
 {% for month in postsByMonth %}
   <h2>{{ month.name }}</h2>
   <div class="threeColumns">
