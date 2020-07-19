@@ -19,9 +19,9 @@ title: Plants
     {% assign wishlist = location.items %}
   {% endif %}
 {% endfor %}
-<h2 class="anchor" id="want">Want</h2>
+<h2 class="anchor" id="want">Wishlist</h2>
 <p>These are plants I haven't had the joy of owning yet, but for which I'm keeping my eye out for a good source. I wouldn't say they're particuarly expensive plants (at least not all of them); I just can't seem to find them in my area. Happy to trade with someone if something I have is on your wishlist!</p>
-{% assign plantFamilies = site.data.plants | group_by: "family" | sort: "name" %}
+{% assign plantFamilies = wishlist | group_by: "family" | sort: "name" %}
 {% for family in plantFamilies %}
   <h3>{{ family.name }}</h3>
   <div class="deck">
