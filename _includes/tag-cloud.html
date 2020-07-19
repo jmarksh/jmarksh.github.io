@@ -1,3 +1,4 @@
+<!--
 <h2>Tag Cloud</h2>
 <div class="threeColumns">
   <div class="tagCloud">
@@ -18,3 +19,10 @@
     {% endfor %}
   </div>
 </div>
+-->
+{% assign site.tags.size = n %}
+{% assign sortedTags = site.tags | sort %}
+{% assign sampleTags = sortedTags | sample: n %}
+{% for tag in sampleTags %}
+  {{ tag[0] }}
+{% endfor %}
