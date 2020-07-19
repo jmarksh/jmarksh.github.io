@@ -7,7 +7,8 @@
       {% endfor %}
     {% endcapture %}
     {% assign tagsBySize = tags | split: " " | sort %}
-    {% assign biggestTag = tagsBySize[0] | split: "#" %}
+    {% assign biggestTag = tagsBySize | first | split: "#" %}
+    {% assign smallestTag = tagsBySize | last | split: "#" %}
     {% assign max = biggestTag[2] | minus: 1 %}
     {% assign increment = 100 | divided_by: max %}
     {% assign n = site.tags | size %}
