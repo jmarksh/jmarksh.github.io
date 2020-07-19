@@ -1,21 +1,28 @@
-<h2>Tag Cloud</h2>
-<div class="threeColumns">
-  <div class="tagCloud">
-    {% capture tags %}
-      {% for tag in site.tags %}
-        {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
-      {% endfor %}
-    {% endcapture %}
-    {% assign tagsBySize = tags | split: " " | sort %}
-    {% assign biggestTag = tagsBySize | first | split: "#" %}
-    {% assign smallestTag = tagsBySize | last | split: "#" %}
-    {% assign range = biggestTag[2] | minus: smallestTag[2] %}
-    {% assign increment = 100 | divided_by: range %}
-    {% assign n = site.tags | size %}
-    {% assign sortedTags = site.tags | sort %}
-    {% assign sampleTags = sortedTags | sample: n %}
-    {% for tag in sampleTags %}
-      <a href="{{ site.baseurl }}/blog/tags/{{ tag[0] | slugify }}" style="font-size: {{ tag[1].size | minus: smallestTag[2] | times: increment | plus: 80 }}%">{{ tag[0] }}</a>
-    {% endfor %}
+{% assign n = site.tags | size %}
+{% if n > 0 %}
+  <h2>Tag Cloud</h2>
+  <div class="threeColumns">
+    <div class="tagCloud">
+      {% capture tags %}
+        {% for tag in site.tags %}
+          {{ tag[1].size | minus: 10000 }}#{{ tag[0] }}#{{ tag[1].size }}
+        {% endfor %}
+      {% endcapture %}
+      {% assign tagsBySize = tags | split: " " | sort %}
+      {% if n > 1 %}
+        {% assign biggestTag = tagsBySize | first | split: "#" %}
+        {% assign smallestTag = tagsBySize | last | split: "#" %}
+        {% assign range = biggestTag[2] | minus: smallestTag[2] %}
+        {% assign increment = 100 | divided_by: range %}
+        {% assign sortedTags = site.tags | sort %}
+        {% assign sampleTags = sortedTags | sample: n %}
+        {% for tag in sampleTags %}
+          <a href="{{ site.baseurl }}/blog/tags/{{ tag[0] | slugify }}" style="font-size: {{ tag[1].size | minus: smallestTag[2] | times: increment | plus: 80 }}%">{{ tag[0] }}</a>
+        {% endfor %}
+      {% else %}
+        {% assign tag = tagsBySize | split: "#" %}
+        <a href="{{ site.baseurl }}/blog/tags/{{ tag[1] | slugify }}" style="font-size: 130%">{{ tag[1] }}</a>
+      {% endif %}
+    </div>
   </div>
-</div>
+{% endif %}
