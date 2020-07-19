@@ -13,28 +13,29 @@ title: Plants
   {% endfor %}
 </ul>
 
-<h2 id="#want">Want</h2>
+{% assign wishlist = "" %}
+{% for location in plantLocations %}
+  {% if location.name == "Want" %}
+    {% assign wishlist = location.items %}
+  {% endif %}
+{% endfor %}
+<h2 class="anchor" id="want">Want</h2>
 <p>These are plants I haven't had the joy of owning yet, but for which I'm keeping my eye out for a good source. I wouldn't say they're particuarly expensive plants (at least not all of them); I just can't seem to find them in my area. Happy to trade with someone if something I have is on your wishlist!</p>
-{% for plant in site.data.plants | where:"location","Want" %}
-  <i>{{ plant.genus }} {{ plant.species }}</i>
-{% endfor %}
-
-
-{% assign plant_families = site.data.plants | group_by: "family" | sort: "name" %}
-{% for f in plant_families %}
-  <h2>{{ f.name }}</h2>
+{% assign plantFamilies = site.data.plants | group_by: "family" | sort: "name" %}
+{% for family in plantFamilies}
+  <h3>{{ f.name }}</h3>
   <div class="deck">
-    {% assign sorted_by_type = f.items | sort: "type" %}
-    {% assign sorted_by_variety = sorted_by_type | sort: "variety" %}
-    {% assign sorted_by_species = sorted_by_variety | sort: "species" %}
-    {% assign sorted_by_genus = sorted_by_species | sort: "genus" %}
-      {% for p in sorted_by_genus %}
-        <div class="card">
-          <div class="cardContent">
-            <i>{{ p.genus }}{% if p.species %} {{ p.species }}{% else %} sp.{% endif %}</i>{% if p.variety %} '{{ p.variety }}'{% endif %}{% if p.type %} {{ p.type }}{% endif %}<br />
-            <a href="https://www.google.com/search?q={{ p.genus }}+{{ p.species }}">Search Google</a>
-          </div>
+    {% assign sortedByType = family.items | sort: "type" %}
+    {% assign sortedByVariety = sortedByType | sort: "variety" %}
+    {% assign sortedBySpecies = sortedByVariety | sort: "species" %}
+    {% assign sortedByGenus = sortedBySpecies | sort: "genus" %}
+    {% for plant in sorted_by_genus %}
+      <div class="card">
+        <div class="cardContent">
+          <i>{{ p.genus }}{% if p.species %} {{ p.species }}{% else %} sp.{% endif %}</i>{% if p.variety %} '{{ p.variety }}'{% endif %}{% if p.type %} {{ p.type }}{% endif %}<br />
+          <a href="https://www.google.com/search?q={{ p.genus }}+{{ p.species }}">Search Google</a>
         </div>
-      {% endfor %}
-    </div>
-{% endfor %}
+      </div>
+    {% endfor %}
+   </div>
+ {% endfor %}
