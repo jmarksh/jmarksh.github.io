@@ -9,13 +9,13 @@
     {% assign tagsBySize = tags | split: " " | sort %}
     {% assign biggestTag = tagsBySize | first | split: "#" %}
     {% assign smallestTag = tagsBySize | last | split: "#" %}
-    {% assign max = biggestTag[2] | minus: 1 %}
-    {% assign increment = 100 | divided_by: max %}
+    {% assign range = biggestTag[2] | minus: smallestTag[2] %}
+    {% assign increment = 100 | divided_by: range %}
     {% assign n = site.tags | size %}
     {% assign sortedTags = site.tags | sort %}
     {% assign sampleTags = sortedTags | sample: n %}
     {% for tag in sampleTags %}
-      <a href="{{ site.baseurl }}/blog/tags/{{ tag[0] | slugify }}" style="font-size: {{ tag[1].size | minus: 1 | times: increment | plus: 80 }}%">{{ tag[0] }}</a>
+      <a href="{{ site.baseurl }}/blog/tags/{{ tag[0] | slugify }}" style="font-size: {{ tag[1].size | minus: smallestTag[2] | times: increment | plus: 80 }}%">{{ tag[0] }}</a>
     {% endfor %}
   </div>
 </div>
