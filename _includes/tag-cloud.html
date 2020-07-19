@@ -25,7 +25,6 @@
   {% assign tagCount = tagCount | plus: 1 %}
 {% endfor %}
 {% assign sortedTags = site.tags | sort %}
-{% assign sampleTags = sortedTags | sample: 2 %}
-{% for tag in sampleTags %}
+{% for tag in sortedTags %}
   {{ tag[0] }}
 {% endfor %}
