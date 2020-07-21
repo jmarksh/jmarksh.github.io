@@ -6,6 +6,7 @@ title: Plants
 
 <p>Between my partner, Chris, having a degree in landscape architecture and my own houseplant hobby, we've developed quite a collection. Add in my obsession with data analysis, and you get this little catalog of plants. You can also follow us and out plants on Instagram <a href="https://www.instagram.com/theboysprouts/">@theBoySprouts</a>.</p>
 
+{% assign wishlistCount = 28 %}
 {% assign plantLocations = site.data.plants | group_by: "location" | sort: "name" %}
 <ul>
   {% for location in plantLocations %}
