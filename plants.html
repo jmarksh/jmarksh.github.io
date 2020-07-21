@@ -13,9 +13,18 @@ title: Plants
   {% endfor %}
 </ul>
 
-<p>That means we have or have had (rest in peace all of the African violets I've killed) a total of {{ site.data.plants.size }} different kinds of plants. Of course we have some duplicates of some favorites (and multiples in a pot very often), so it's not really fair to count "plants" per se. Needless to say, it's quite a few. Luickly, we have a 1/3-acre lot, so the outside plants have plenty of room. The indoor plants, on the other hand...</p>
+<p>That means we have or have had (rest in peace all of the African violets I've killed) a total of {{ site.data.plants.size }} different kinds of plants. Of course we have some duplicates of some favorites (and multiples in a pot very often), so it's not really fair to count "plants" per se. Needless to say, it's quite a few. Luickly, we have a 1/3-acre lot, so the outside plants have plenty of room. The inside plants, on the other hand...</p>
 
 {% for location in plantLocations %}
+  {% if location.name == "Dead" %}
+    <h2 class="anchor" id="{{ location.name | slugify }}">{{ location.name }}</h2>
+    <p>Right up front you get the list of plants that have died in our care. In some cases we wanted to keep them, but they died in a move or a transition around the yard (nothing is permanent in our landscape). But to be quite honest, most of the death here came from inexperienced care. I'd like to give most of them a shot again when the time is right.</p>
+  {% endif %}
+
+  {% if location.name == "Gave" %}
+    <h2 class="anchor" id="{{ location.name | slugify }}">{{ location.name }}</h2>
+    <p>I've given away quite a bit more plants than the ones listed here. These are just the plants that I gave away and didn't have a backup. I've cared for them, found that I didn't love them for some reason or other, and gave them to a better home. Mostly, they just fought me. Whether they needed more attention than I was willing to give or constantly suffered some malady, the costs outweighed the benefits.</p>
+  {% endif %}
 
   {% if location.name == "Inside" %}
     <h2 class="anchor" id="{{ location.name | slugify }}">{{ location.name }}</h2>
