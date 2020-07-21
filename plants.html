@@ -16,6 +16,7 @@ title: Plants
 <p>That means we have or have had (rest in peace all of the African violets I've killed) a total of {{ site.data.plants.size }} different kinds of plants. Of course we have some duplicates of some favorites (and multiples in a pot very often), so it's not really fair to count "plants" per se. Needless to say, it's quite a few. Luickly, we have a 1/3-acre lot, so the outside plants have plenty of room. The indoor plants, on the other hand...</p>
 
 {% for location in plantLocations %}
+
   {% if location.name == "Inside" %}
     <h2 class="anchor" id="{{ location.name | slugify }}">{{ location.name }}</h2>
     <p>The vast majority of these plants are mine, save a few pothos and all of the orchids (not the biggest fan). Naturally, the family Araceae is well-represented. Moreso because they make easy houseplants than any sort of fanaticism. The family Apocynaceae, on the other hand, is a bit of an obsession. It's so very diverse between Hoya, Stapelia, Ceropegia, Plumeria! The list goes on, and they're all amazing.</p>
@@ -24,6 +25,11 @@ title: Plants
   {% if location.name == "Outside" %}
     <h2 class="anchor" id="{{ location.name | slugify }}">{{ location.name }}</h2>
     <p>Chris's goal has been to make our front yard look like an English garden. I've come to findo out that this means cramming as many plants into a small location as you can to make it look "homey". I have a few choice plants of my own among them, but I'd say between the edibles and the flowers, these are mostly Chris's.</p>
+  {% endif %}
+
+  {% if location.name == "Water" %}
+    <h2 class="anchor" id="{{ location.name | slugify }}">{{ location.name }}</h2>
+    <p>Chris keeps fish, and fish need oxygen (plus those tanks look way better chock full of greenery).</p>
   {% endif %}
 
   {% if location.name == "Wishlist" %}
@@ -39,7 +45,7 @@ title: Plants
     {% for plant in sortedByGenus %}
       <div class="card">
         <div class="cardContent">
-          <i>{{ plant.genus }}{% if plant.species %} {{ plant.species }}{% else %} sp.{% endif %}</i>{% if plant.variety %} '{{ plant.variety }}'{% endif %}{% if plant.type %} {{ plant.type }}{% endif %}<br />
+          <i>{{ plant.genus }}{% if plant.species %} {{ plant.species }}{% else %} sp.{% endif %}{% if plant.type %} {{ plant.type }}{% endif %}</i>{% if plant.variety %} '{{ plant.variety }}'{% endif %}<br />
           <a href="https://www.google.com/search?q={{ plant.genus }}+{{ plant.species }}">Search Google</a>
         </div>
       </div>
