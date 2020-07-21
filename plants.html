@@ -4,7 +4,7 @@ title: Plants
 ---
 <h1>Plants</h1>
 
-<p>Between my partner having a degree in landscape architecture and my own obsession with houseplants, we've developed quite a collection. Add in my obsession with data analysis, and you get this little catalog of plants. You can also follow us and out plants on Instagram <a href="https://www.instagram.com/theboysprouts/">@theBoySprouts</a>.</p>
+<p>Between my partner, Chris, having a degree in landscape architecture and my own houseplant hobby, we've developed quite a collection. Add in my obsession with data analysis, and you get this little catalog of plants. You can also follow us and out plants on Instagram <a href="https://www.instagram.com/theboysprouts/">@theBoySprouts</a>.</p>
 
 {% assign plantLocations = site.data.plants | group_by: "location" | sort: "name" %}
 <ul>
@@ -13,14 +13,31 @@ title: Plants
   {% endfor %}
 </ul>
 
-{% assign wishlist = "" %}
 {% for location in plantLocations %}
+  {% if location.name == "Inside" %}
+    <h2 class="anchor" id="{{ location.name | slugify }}">{{ location.name }}</h2>
+    <p>The vast majority of these plants are mine, save a few pothos and all of the orchids (not the biggest fan). Naturally, the family Araceae is well-represented. Moreso because they make easy houseplants than any sort of fanaticism. The family Apocynaceae, on the other hand, is a bit of an obsession. It's so very diverse between Hoya, Stapelia, Ceropegia, Plumeria! The list goes on, and they're all amazing.</p>
+    <div class="deck">
+      {% assign sortedByType = location.items | sort: "type" %}
+      {% assign sortedByVariety = sortedByType | sort: "variety" %}
+      {% assign sortedBySpecies = sortedByVariety | sort: "species" %}
+      {% assign sortedByGenus = sortedBySpecies | sort: "genus" %}
+      {% for plant in sortedByGenus %}
+        <div class="card">
+          <div class="cardContent">
+            <i>{{ plant.genus }}{% if plant.species %} {{ plant.species }}{% else %} sp.{% endif %}</i>{% if plant.variety %} '{{ plant.variety }}'{% endif %}{% if plant.type %} {{ plant.type }}{% endif %}<br />
+            <a href="https://www.google.com/search?q={{ plant.genus }}+{{ plant.species }}">Search Google</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   {% if location.name == "Wishlist" %}
-    {% assign wishlist = location.items %}
     <h2 class="anchor" id="{{ location.name | slugify }}">{{ location.name }}</h2>
     <p>These are plants I haven't had the joy of owning yet, but for which I'm keeping an eye out for a good source. They're not always particularly expensive; I just can't seem to find them in my area. Happy to trade with someone if something I have is on your wishlist! Plant penpals wanted.</p>
     <div class="deck">
-      {% assign sortedByType = wishlist | sort: "type" %}
+      {% assign sortedByType = location.items | sort: "type" %}
       {% assign sortedByVariety = sortedByType | sort: "variety" %}
       {% assign sortedBySpecies = sortedByVariety | sort: "species" %}
       {% assign sortedByGenus = sortedBySpecies | sort: "genus" %}
