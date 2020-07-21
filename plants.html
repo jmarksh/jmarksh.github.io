@@ -16,7 +16,8 @@ title: Plants
   {% endif %}
 </ul>
 
-<p>That means we have or have had (rest in peace all of the African violets I've killed) a total of {{ site.data.plants.size | minus: wishlistCount }} different kinds of plants. Of course we have some duplicates of some favorites (and multiples in a pot very often), so it's not really fair to count "plants" per se. Needless to say, it's quite a few. Luickly, we have a 1/3-acre lot, so the outside plants have plenty of room. The inside plants, on the other hand...</p>
+{% assign ownedPlants = site.data.plants.size | minus: wishlistCount %}
+<p>That means we have or have had (rest in peace all of the African violets I've killed) a total of {{ ownedPlants }} different kinds of plants. Of course we have some duplicates of some favorites (and multiples in a pot very often), so it's not really fair to count "plants" per se. Needless to say, it's quite a few. Luickly, we have a 1/3-acre lot, so the outside plants have plenty of room. The inside plants, on the other hand...</p>
 
 {% for location in plantLocations %}
   {% if location.name == "Dead" %}
