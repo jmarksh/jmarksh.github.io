@@ -2,7 +2,6 @@
 title: Fear of Looking Stupid
 category: Inspiration
 tags: Quote
-author:
 ---
 
 Your fear of looking stupid is holding you back.
