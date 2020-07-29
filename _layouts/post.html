@@ -7,7 +7,7 @@ layout: default
 
 {{ content }}
 
-<p class="smaller"><em>Posted{% if page.author %} by {{ page.author }}{% endif %} on {{ page.date | date_to_string }}.</em></p>
+<p class="smaller"><em>Post by {% if page.author %}{{ page.author }}{% else %}unknown{% endif %} on {{ page.date | date_to_string }}.</em></p>
 
 <hr />
 <div class="threeColumns">
